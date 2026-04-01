@@ -1,6 +1,6 @@
 ﻿namespace VentesMeubles
 {
-    partial class Form1
+    partial class VentesMeublesForm
     {
         /// <summary>
         /// Required designer variable.
