@@ -16,5 +16,15 @@ namespace VentesMeubles
         {
             InitializeComponent();
         }
+
+        private void VentesMeublesContextMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void quitterButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
