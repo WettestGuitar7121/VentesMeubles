@@ -34,6 +34,32 @@
             this.transactionGroupBox = new System.Windows.Forms.GroupBox();
             this.enregistreButton = new System.Windows.Forms.Button();
             this.quitterButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.prenomLabel = new System.Windows.Forms.Label();
+            this.adresseLabel = new System.Windows.Forms.Label();
+            this.codePostalLabel = new System.Windows.Forms.Label();
+            this.telephoneLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateLivraisonLabel = new System.Windows.Forms.Label();
+            this.manifacturierLabel = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.codePostalMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.telephoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.typeMeubleComboBox = new System.Windows.Forms.ComboBox();
+            this.marqueMeubleComboBox = new System.Windows.Forms.ComboBox();
+            this.dateLivraisonDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.manifacturierComboBox = new System.Windows.Forms.ComboBox();
+            this.tailleComboBox = new System.Windows.Forms.ComboBox();
+            this.prixMeubleLabel = new System.Windows.Forms.Label();
+            this.nomMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.prenomMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.adresseMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.clientGroupBox.SuspendLayout();
+            this.transactionGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // VentesMeublesContextMenuStrip
@@ -45,18 +71,40 @@
             // 
             // clientGroupBox
             // 
+            this.clientGroupBox.Controls.Add(this.adresseMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.prenomMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.nomMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.marqueMeubleComboBox);
+            this.clientGroupBox.Controls.Add(this.typeMeubleComboBox);
+            this.clientGroupBox.Controls.Add(this.telephoneMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.codePostalMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.label7);
+            this.clientGroupBox.Controls.Add(this.label6);
+            this.clientGroupBox.Controls.Add(this.telephoneLabel);
+            this.clientGroupBox.Controls.Add(this.codePostalLabel);
+            this.clientGroupBox.Controls.Add(this.adresseLabel);
+            this.clientGroupBox.Controls.Add(this.prenomLabel);
+            this.clientGroupBox.Controls.Add(this.label1);
             this.clientGroupBox.Location = new System.Drawing.Point(65, 86);
             this.clientGroupBox.Name = "clientGroupBox";
-            this.clientGroupBox.Size = new System.Drawing.Size(344, 316);
+            this.clientGroupBox.Size = new System.Drawing.Size(351, 336);
             this.clientGroupBox.TabIndex = 3;
             this.clientGroupBox.TabStop = false;
             this.clientGroupBox.Text = "Client:";
             // 
             // transactionGroupBox
             // 
-            this.transactionGroupBox.Location = new System.Drawing.Point(622, 86);
+            this.transactionGroupBox.Controls.Add(this.prixMeubleLabel);
+            this.transactionGroupBox.Controls.Add(this.tailleComboBox);
+            this.transactionGroupBox.Controls.Add(this.manifacturierComboBox);
+            this.transactionGroupBox.Controls.Add(this.dateLivraisonDateTimePicker);
+            this.transactionGroupBox.Controls.Add(this.label11);
+            this.transactionGroupBox.Controls.Add(this.label10);
+            this.transactionGroupBox.Controls.Add(this.manifacturierLabel);
+            this.transactionGroupBox.Controls.Add(this.dateLivraisonLabel);
+            this.transactionGroupBox.Location = new System.Drawing.Point(622, 78);
             this.transactionGroupBox.Name = "transactionGroupBox";
-            this.transactionGroupBox.Size = new System.Drawing.Size(344, 316);
+            this.transactionGroupBox.Size = new System.Drawing.Size(384, 324);
             this.transactionGroupBox.TabIndex = 4;
             this.transactionGroupBox.TabStop = false;
             this.transactionGroupBox.Text = "Transaction:";
@@ -69,6 +117,7 @@
             this.enregistreButton.TabIndex = 0;
             this.enregistreButton.Text = "Enregistrer";
             this.enregistreButton.UseVisualStyleBackColor = true;
+            this.enregistreButton.Click += new System.EventHandler(this.enregistreButton_Click);
             // 
             // quitterButton
             // 
@@ -80,17 +129,213 @@
             this.quitterButton.UseVisualStyleBackColor = true;
             this.quitterButton.Click += new System.EventHandler(this.quitterButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom:";
+            // 
+            // prenomLabel
+            // 
+            this.prenomLabel.AutoSize = true;
+            this.prenomLabel.Location = new System.Drawing.Point(26, 78);
+            this.prenomLabel.Name = "prenomLabel";
+            this.prenomLabel.Size = new System.Drawing.Size(57, 16);
+            this.prenomLabel.TabIndex = 1;
+            this.prenomLabel.Text = "Prénom:";
+            // 
+            // adresseLabel
+            // 
+            this.adresseLabel.AutoSize = true;
+            this.adresseLabel.Location = new System.Drawing.Point(26, 113);
+            this.adresseLabel.Name = "adresseLabel";
+            this.adresseLabel.Size = new System.Drawing.Size(61, 16);
+            this.adresseLabel.TabIndex = 2;
+            this.adresseLabel.Text = "Adresse:";
+            // 
+            // codePostalLabel
+            // 
+            this.codePostalLabel.AutoSize = true;
+            this.codePostalLabel.Location = new System.Drawing.Point(26, 148);
+            this.codePostalLabel.Name = "codePostalLabel";
+            this.codePostalLabel.Size = new System.Drawing.Size(83, 16);
+            this.codePostalLabel.TabIndex = 3;
+            this.codePostalLabel.Text = "Code postal:";
+            // 
+            // telephoneLabel
+            // 
+            this.telephoneLabel.AutoSize = true;
+            this.telephoneLabel.Location = new System.Drawing.Point(26, 192);
+            this.telephoneLabel.Name = "telephoneLabel";
+            this.telephoneLabel.Size = new System.Drawing.Size(76, 16);
+            this.telephoneLabel.TabIndex = 4;
+            this.telephoneLabel.Text = "Téléphone:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 230);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 16);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Type de meuble:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(26, 268);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 16);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Marque de Meuble:";
+            // 
+            // dateLivraisonLabel
+            // 
+            this.dateLivraisonLabel.AutoSize = true;
+            this.dateLivraisonLabel.Location = new System.Drawing.Point(18, 49);
+            this.dateLivraisonLabel.Name = "dateLivraisonLabel";
+            this.dateLivraisonLabel.Size = new System.Drawing.Size(111, 16);
+            this.dateLivraisonLabel.TabIndex = 7;
+            this.dateLivraisonLabel.Text = "Date de livraison:";
+            // 
+            // manifacturierLabel
+            // 
+            this.manifacturierLabel.AutoSize = true;
+            this.manifacturierLabel.Location = new System.Drawing.Point(40, 107);
+            this.manifacturierLabel.Name = "manifacturierLabel";
+            this.manifacturierLabel.Size = new System.Drawing.Size(86, 16);
+            this.manifacturierLabel.TabIndex = 8;
+            this.manifacturierLabel.Text = "Manifacturier:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 170);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 16);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Taille:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(40, 239);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 16);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Prix:";
+            // 
+            // codePostalMaskedTextBox
+            // 
+            this.codePostalMaskedTextBox.Location = new System.Drawing.Point(165, 145);
+            this.codePostalMaskedTextBox.Name = "codePostalMaskedTextBox";
+            this.codePostalMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.codePostalMaskedTextBox.TabIndex = 10;
+            // 
+            // telephoneMaskedTextBox
+            // 
+            this.telephoneMaskedTextBox.Location = new System.Drawing.Point(165, 186);
+            this.telephoneMaskedTextBox.Name = "telephoneMaskedTextBox";
+            this.telephoneMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.telephoneMaskedTextBox.TabIndex = 11;
+            // 
+            // typeMeubleComboBox
+            // 
+            this.typeMeubleComboBox.FormattingEnabled = true;
+            this.typeMeubleComboBox.Location = new System.Drawing.Point(165, 228);
+            this.typeMeubleComboBox.Name = "typeMeubleComboBox";
+            this.typeMeubleComboBox.Size = new System.Drawing.Size(121, 24);
+            this.typeMeubleComboBox.TabIndex = 12;
+            // 
+            // marqueMeubleComboBox
+            // 
+            this.marqueMeubleComboBox.FormattingEnabled = true;
+            this.marqueMeubleComboBox.Location = new System.Drawing.Point(165, 265);
+            this.marqueMeubleComboBox.Name = "marqueMeubleComboBox";
+            this.marqueMeubleComboBox.Size = new System.Drawing.Size(121, 24);
+            this.marqueMeubleComboBox.TabIndex = 13;
+            // 
+            // dateLivraisonDateTimePicker
+            // 
+            this.dateLivraisonDateTimePicker.Location = new System.Drawing.Point(147, 46);
+            this.dateLivraisonDateTimePicker.Name = "dateLivraisonDateTimePicker";
+            this.dateLivraisonDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dateLivraisonDateTimePicker.TabIndex = 11;
+            // 
+            // manifacturierComboBox
+            // 
+            this.manifacturierComboBox.FormattingEnabled = true;
+            this.manifacturierComboBox.Location = new System.Drawing.Point(147, 99);
+            this.manifacturierComboBox.Name = "manifacturierComboBox";
+            this.manifacturierComboBox.Size = new System.Drawing.Size(121, 24);
+            this.manifacturierComboBox.TabIndex = 12;
+            // 
+            // tailleComboBox
+            // 
+            this.tailleComboBox.FormattingEnabled = true;
+            this.tailleComboBox.Location = new System.Drawing.Point(147, 170);
+            this.tailleComboBox.Name = "tailleComboBox";
+            this.tailleComboBox.Size = new System.Drawing.Size(121, 24);
+            this.tailleComboBox.TabIndex = 13;
+            // 
+            // prixMeubleLabel
+            // 
+            this.prixMeubleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prixMeubleLabel.Location = new System.Drawing.Point(144, 235);
+            this.prixMeubleLabel.Name = "prixMeubleLabel";
+            this.prixMeubleLabel.Size = new System.Drawing.Size(192, 23);
+            this.prixMeubleLabel.TabIndex = 14;
+            this.prixMeubleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nomMaskedTextBox
+            // 
+            this.nomMaskedTextBox.Location = new System.Drawing.Point(165, 38);
+            this.nomMaskedTextBox.Name = "nomMaskedTextBox";
+            this.nomMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nomMaskedTextBox.TabIndex = 14;
+            // 
+            // prenomMaskedTextBox
+            // 
+            this.prenomMaskedTextBox.Location = new System.Drawing.Point(165, 72);
+            this.prenomMaskedTextBox.Name = "prenomMaskedTextBox";
+            this.prenomMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.prenomMaskedTextBox.TabIndex = 15;
+            // 
+            // adresseMaskedTextBox
+            // 
+            this.adresseMaskedTextBox.Location = new System.Drawing.Point(165, 110);
+            this.adresseMaskedTextBox.Name = "adresseMaskedTextBox";
+            this.adresseMaskedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.adresseMaskedTextBox.TabIndex = 16;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.Location = new System.Drawing.Point(436, 12);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(171, 112);
+            this.logoPictureBox.TabIndex = 6;
+            this.logoPictureBox.TabStop = false;
+            // 
             // VentesMeublesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 600);
+            this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.quitterButton);
             this.Controls.Add(this.enregistreButton);
             this.Controls.Add(this.transactionGroupBox);
             this.Controls.Add(this.clientGroupBox);
             this.Name = "VentesMeublesForm";
             this.Text = "Formulaire de vente de Thomas Old Furniture\'s";
+            this.clientGroupBox.ResumeLayout(false);
+            this.clientGroupBox.PerformLayout();
+            this.transactionGroupBox.ResumeLayout(false);
+            this.transactionGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,6 +347,29 @@
         private System.Windows.Forms.GroupBox transactionGroupBox;
         private System.Windows.Forms.Button enregistreButton;
         private System.Windows.Forms.Button quitterButton;
+        private System.Windows.Forms.Label dateLivraisonLabel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label telephoneLabel;
+        private System.Windows.Forms.Label codePostalLabel;
+        private System.Windows.Forms.Label adresseLabel;
+        private System.Windows.Forms.Label prenomLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox marqueMeubleComboBox;
+        private System.Windows.Forms.ComboBox typeMeubleComboBox;
+        private System.Windows.Forms.MaskedTextBox telephoneMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox codePostalMaskedTextBox;
+        private System.Windows.Forms.ComboBox tailleComboBox;
+        private System.Windows.Forms.ComboBox manifacturierComboBox;
+        private System.Windows.Forms.DateTimePicker dateLivraisonDateTimePicker;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label manifacturierLabel;
+        private System.Windows.Forms.Label prixMeubleLabel;
+        private System.Windows.Forms.MaskedTextBox nomMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox adresseMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox prenomMaskedTextBox;
+        private System.Windows.Forms.PictureBox logoPictureBox;
     }
 }
 

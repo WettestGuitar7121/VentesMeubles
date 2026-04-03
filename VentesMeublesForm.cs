@@ -26,5 +26,10 @@ namespace VentesMeubles
         {
             this.Close();
         }
+
+        private void enregistreButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
