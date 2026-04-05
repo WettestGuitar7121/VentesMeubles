@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using g = VentesMeubles.VentesMeublesGeneraleClass;
+using ce = VentesMeubles.VentesMeublesGeneraleClass.CodesErreurs;
 
 namespace VentesMeubles
 {
