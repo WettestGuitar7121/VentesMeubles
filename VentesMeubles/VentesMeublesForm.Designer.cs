@@ -389,7 +389,6 @@
             this.Name = "VentesMeublesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulaire de vente de Thomas\'s Old Furnitures";
-            this.Load += new System.EventHandler(this.VentesMeublesForm_Load);
             this.clientGroupBox.ResumeLayout(false);
             this.clientGroupBox.PerformLayout();
             this.transactionGroupBox.ResumeLayout(false);

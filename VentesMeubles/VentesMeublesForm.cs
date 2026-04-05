@@ -53,10 +53,5 @@ namespace VentesMeubles
             this.Close();
         }
         #endregion
-
-        private void VentesMeublesForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
