@@ -10,26 +10,36 @@ using System.Windows.Forms;
 
 namespace VentesMeubles
 {
+ 
+    /// <summary>
+    /// Les saisies d'une transaction
+    /// </summary>
+    
     public partial class VentesMeublesForm : Form
     {
+        #region Déclaration des membres privées
+
+        #endregion
+
+        #region Constructeurs
         public VentesMeublesForm()
         {
             InitializeComponent();
         }
+        #endregion
+        #region Initialisation
 
-        private void VentesMeublesContextMenuStrip_Opening(object sender, CancelEventArgs e)
-        {
+        #endregion
 
-        }
+        #region Obtenir le prix
 
+        #endregion
+
+        #region Quitter
         private void quitterButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void enregistreButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

@@ -299,7 +299,6 @@
             this.enregistreButton.TabIndex = 0;
             this.enregistreButton.Text = "Enregistrer";
             this.enregistreButton.UseVisualStyleBackColor = true;
-            this.enregistreButton.Click += new System.EventHandler(this.enregistreButton_Click);
             // 
             // quitterButton
             // 
@@ -389,7 +388,7 @@
             this.MainMenuStrip = this.VentesMeublesMenuStrip;
             this.Name = "VentesMeublesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulaire de vente de Thomas Old Furniture\'s";
+            this.Text = "Formulaire de vente de Thomas\'s Old Furnitures";
             this.clientGroupBox.ResumeLayout(false);
             this.clientGroupBox.PerformLayout();
             this.transactionGroupBox.ResumeLayout(false);
