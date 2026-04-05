@@ -12,7 +12,7 @@ namespace Transaction
     public class TransactionClass
     {
         #region Déclaration des tableaux
-
+        ///ssssssssssssssssssss
         #endregion
 
         #region Initialisation des tableaux
