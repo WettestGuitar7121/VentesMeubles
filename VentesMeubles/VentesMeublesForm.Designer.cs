@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentesMeublesForm));
             this.clientGroupBox = new System.Windows.Forms.GroupBox();
-            this.adresseMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.prenomMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.nomMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.marqueMeubleComboBox = new System.Windows.Forms.ComboBox();
-            this.typeMeubleComboBox = new System.Windows.Forms.ComboBox();
-            this.telephoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.codePostalMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.marqueMeubleLabel = new System.Windows.Forms.Label();
-            this.typeMeubleLabel = new System.Windows.Forms.Label();
-            this.telephoneLabel = new System.Windows.Forms.Label();
-            this.codePostalLabel = new System.Windows.Forms.Label();
-            this.adresseLabel = new System.Windows.Forms.Label();
-            this.prenomLabel = new System.Windows.Forms.Label();
-            this.nomLabel = new System.Windows.Forms.Label();
+            this.adresseClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.prenomClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.nomClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.marqueMeubleClientGroupBoxComboBox = new System.Windows.Forms.ComboBox();
+            this.typeMeubleClientGroupBoxComboBox = new System.Windows.Forms.ComboBox();
+            this.telephoneClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.codePostalClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.marqueMeubleClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.typeMeubleClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.telephoneClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.codePostalClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.adresseClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.prenomClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.nomClientGroupBoxLabel = new System.Windows.Forms.Label();
             this.transactionGroupBox = new System.Windows.Forms.GroupBox();
-            this.prixMeubleLabel = new System.Windows.Forms.Label();
-            this.tailleComboBox = new System.Windows.Forms.ComboBox();
-            this.manifacturierComboBox = new System.Windows.Forms.ComboBox();
-            this.dateLivraisonDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.prixLabel = new System.Windows.Forms.Label();
-            this.tailleLabel = new System.Windows.Forms.Label();
-            this.manifacturierLabel = new System.Windows.Forms.Label();
-            this.dateLivraisonLabel = new System.Windows.Forms.Label();
+            this.prixMeubleTransactionGroupBoxLabel = new System.Windows.Forms.Label();
+            this.tailleTransactionGroupBoxComboBox = new System.Windows.Forms.ComboBox();
+            this.manifacturierTransactionGroupBoxComboBox = new System.Windows.Forms.ComboBox();
+            this.dateLivraisonTransactionGroupBoxDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.prixTransactionGroupBoxLabel = new System.Windows.Forms.Label();
+            this.tailleTransactionGroupBoxLabel = new System.Windows.Forms.Label();
+            this.manifacturierTransactionGroupBoxLabel = new System.Windows.Forms.Label();
+            this.dateLivraisonTransactionGroupBoxLabel = new System.Windows.Forms.Label();
             this.enregistreButton = new System.Windows.Forms.Button();
             this.quitterButton = new System.Windows.Forms.Button();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
@@ -73,20 +73,20 @@
             // 
             // clientGroupBox
             // 
-            this.clientGroupBox.Controls.Add(this.adresseMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.prenomMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.nomMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.marqueMeubleComboBox);
-            this.clientGroupBox.Controls.Add(this.typeMeubleComboBox);
-            this.clientGroupBox.Controls.Add(this.telephoneMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.codePostalMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.marqueMeubleLabel);
-            this.clientGroupBox.Controls.Add(this.typeMeubleLabel);
-            this.clientGroupBox.Controls.Add(this.telephoneLabel);
-            this.clientGroupBox.Controls.Add(this.codePostalLabel);
-            this.clientGroupBox.Controls.Add(this.adresseLabel);
-            this.clientGroupBox.Controls.Add(this.prenomLabel);
-            this.clientGroupBox.Controls.Add(this.nomLabel);
+            this.clientGroupBox.Controls.Add(this.adresseClientGroupBoxMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.prenomClientGroupBoxMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.nomClientGroupBoxMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.marqueMeubleClientGroupBoxComboBox);
+            this.clientGroupBox.Controls.Add(this.typeMeubleClientGroupBoxComboBox);
+            this.clientGroupBox.Controls.Add(this.telephoneClientGroupBoxMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.codePostalClientGroupBoxMaskedTextBox);
+            this.clientGroupBox.Controls.Add(this.marqueMeubleClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.typeMeubleClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.telephoneClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.codePostalClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.adresseClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.prenomClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.nomClientGroupBoxLabel);
             this.clientGroupBox.Location = new System.Drawing.Point(27, 269);
             this.clientGroupBox.Name = "clientGroupBox";
             this.clientGroupBox.Size = new System.Drawing.Size(416, 336);
@@ -94,132 +94,132 @@
             this.clientGroupBox.TabStop = false;
             this.clientGroupBox.Text = "Client:";
             // 
-            // adresseMaskedTextBox
+            // adresseClientGroupBoxMaskedTextBox
             // 
-            this.adresseMaskedTextBox.Location = new System.Drawing.Point(165, 110);
-            this.adresseMaskedTextBox.Name = "adresseMaskedTextBox";
-            this.adresseMaskedTextBox.Size = new System.Drawing.Size(166, 22);
-            this.adresseMaskedTextBox.TabIndex = 16;
+            this.adresseClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 110);
+            this.adresseClientGroupBoxMaskedTextBox.Name = "adresseClientGroupBoxMaskedTextBox";
+            this.adresseClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
+            this.adresseClientGroupBoxMaskedTextBox.TabIndex = 16;
             // 
-            // prenomMaskedTextBox
+            // prenomClientGroupBoxMaskedTextBox
             // 
-            this.prenomMaskedTextBox.Location = new System.Drawing.Point(165, 72);
-            this.prenomMaskedTextBox.Name = "prenomMaskedTextBox";
-            this.prenomMaskedTextBox.Size = new System.Drawing.Size(166, 22);
-            this.prenomMaskedTextBox.TabIndex = 15;
+            this.prenomClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 72);
+            this.prenomClientGroupBoxMaskedTextBox.Name = "prenomClientGroupBoxMaskedTextBox";
+            this.prenomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
+            this.prenomClientGroupBoxMaskedTextBox.TabIndex = 15;
             // 
-            // nomMaskedTextBox
+            // nomClientGroupBoxMaskedTextBox
             // 
-            this.nomMaskedTextBox.Location = new System.Drawing.Point(165, 38);
-            this.nomMaskedTextBox.Name = "nomMaskedTextBox";
-            this.nomMaskedTextBox.Size = new System.Drawing.Size(166, 22);
-            this.nomMaskedTextBox.TabIndex = 14;
+            this.nomClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 38);
+            this.nomClientGroupBoxMaskedTextBox.Name = "nomClientGroupBoxMaskedTextBox";
+            this.nomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
+            this.nomClientGroupBoxMaskedTextBox.TabIndex = 14;
             // 
-            // marqueMeubleComboBox
+            // marqueMeubleClientGroupBoxComboBox
             // 
-            this.marqueMeubleComboBox.FormattingEnabled = true;
-            this.marqueMeubleComboBox.Location = new System.Drawing.Point(165, 265);
-            this.marqueMeubleComboBox.Name = "marqueMeubleComboBox";
-            this.marqueMeubleComboBox.Size = new System.Drawing.Size(166, 24);
-            this.marqueMeubleComboBox.TabIndex = 13;
+            this.marqueMeubleClientGroupBoxComboBox.FormattingEnabled = true;
+            this.marqueMeubleClientGroupBoxComboBox.Location = new System.Drawing.Point(165, 265);
+            this.marqueMeubleClientGroupBoxComboBox.Name = "marqueMeubleClientGroupBoxComboBox";
+            this.marqueMeubleClientGroupBoxComboBox.Size = new System.Drawing.Size(166, 24);
+            this.marqueMeubleClientGroupBoxComboBox.TabIndex = 13;
             // 
-            // typeMeubleComboBox
+            // typeMeubleClientGroupBoxComboBox
             // 
-            this.typeMeubleComboBox.FormattingEnabled = true;
-            this.typeMeubleComboBox.Location = new System.Drawing.Point(165, 228);
-            this.typeMeubleComboBox.Name = "typeMeubleComboBox";
-            this.typeMeubleComboBox.Size = new System.Drawing.Size(166, 24);
-            this.typeMeubleComboBox.TabIndex = 12;
+            this.typeMeubleClientGroupBoxComboBox.FormattingEnabled = true;
+            this.typeMeubleClientGroupBoxComboBox.Location = new System.Drawing.Point(165, 228);
+            this.typeMeubleClientGroupBoxComboBox.Name = "typeMeubleClientGroupBoxComboBox";
+            this.typeMeubleClientGroupBoxComboBox.Size = new System.Drawing.Size(166, 24);
+            this.typeMeubleClientGroupBoxComboBox.TabIndex = 12;
             // 
-            // telephoneMaskedTextBox
+            // telephoneClientGroupBoxMaskedTextBox
             // 
-            this.telephoneMaskedTextBox.Location = new System.Drawing.Point(165, 186);
-            this.telephoneMaskedTextBox.Mask = "(999) 000-0000";
-            this.telephoneMaskedTextBox.Name = "telephoneMaskedTextBox";
-            this.telephoneMaskedTextBox.Size = new System.Drawing.Size(166, 22);
-            this.telephoneMaskedTextBox.TabIndex = 11;
+            this.telephoneClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 186);
+            this.telephoneClientGroupBoxMaskedTextBox.Mask = "(999) 000-0000";
+            this.telephoneClientGroupBoxMaskedTextBox.Name = "telephoneClientGroupBoxMaskedTextBox";
+            this.telephoneClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
+            this.telephoneClientGroupBoxMaskedTextBox.TabIndex = 11;
             // 
-            // codePostalMaskedTextBox
+            // codePostalClientGroupBoxMaskedTextBox
             // 
-            this.codePostalMaskedTextBox.Location = new System.Drawing.Point(165, 145);
-            this.codePostalMaskedTextBox.Mask = "A9A9A9";
-            this.codePostalMaskedTextBox.Name = "codePostalMaskedTextBox";
-            this.codePostalMaskedTextBox.Size = new System.Drawing.Size(166, 22);
-            this.codePostalMaskedTextBox.TabIndex = 10;
+            this.codePostalClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 145);
+            this.codePostalClientGroupBoxMaskedTextBox.Mask = "A9A9A9";
+            this.codePostalClientGroupBoxMaskedTextBox.Name = "codePostalClientGroupBoxMaskedTextBox";
+            this.codePostalClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
+            this.codePostalClientGroupBoxMaskedTextBox.TabIndex = 10;
             // 
-            // marqueMeubleLabel
+            // marqueMeubleClientGroupBoxLabel
             // 
-            this.marqueMeubleLabel.AutoSize = true;
-            this.marqueMeubleLabel.Location = new System.Drawing.Point(26, 268);
-            this.marqueMeubleLabel.Name = "marqueMeubleLabel";
-            this.marqueMeubleLabel.Size = new System.Drawing.Size(123, 16);
-            this.marqueMeubleLabel.TabIndex = 6;
-            this.marqueMeubleLabel.Text = "Marque de Meuble:";
+            this.marqueMeubleClientGroupBoxLabel.AutoSize = true;
+            this.marqueMeubleClientGroupBoxLabel.Location = new System.Drawing.Point(26, 268);
+            this.marqueMeubleClientGroupBoxLabel.Name = "marqueMeubleClientGroupBoxLabel";
+            this.marqueMeubleClientGroupBoxLabel.Size = new System.Drawing.Size(123, 16);
+            this.marqueMeubleClientGroupBoxLabel.TabIndex = 6;
+            this.marqueMeubleClientGroupBoxLabel.Text = "Marque de Meuble:";
             // 
-            // typeMeubleLabel
+            // typeMeubleClientGroupBoxLabel
             // 
-            this.typeMeubleLabel.AutoSize = true;
-            this.typeMeubleLabel.Location = new System.Drawing.Point(26, 230);
-            this.typeMeubleLabel.Name = "typeMeubleLabel";
-            this.typeMeubleLabel.Size = new System.Drawing.Size(109, 16);
-            this.typeMeubleLabel.TabIndex = 5;
-            this.typeMeubleLabel.Text = "Type de meuble:";
+            this.typeMeubleClientGroupBoxLabel.AutoSize = true;
+            this.typeMeubleClientGroupBoxLabel.Location = new System.Drawing.Point(26, 230);
+            this.typeMeubleClientGroupBoxLabel.Name = "typeMeubleClientGroupBoxLabel";
+            this.typeMeubleClientGroupBoxLabel.Size = new System.Drawing.Size(109, 16);
+            this.typeMeubleClientGroupBoxLabel.TabIndex = 5;
+            this.typeMeubleClientGroupBoxLabel.Text = "Type de meuble:";
             // 
-            // telephoneLabel
+            // telephoneClientGroupBoxLabel
             // 
-            this.telephoneLabel.AutoSize = true;
-            this.telephoneLabel.Location = new System.Drawing.Point(26, 192);
-            this.telephoneLabel.Name = "telephoneLabel";
-            this.telephoneLabel.Size = new System.Drawing.Size(76, 16);
-            this.telephoneLabel.TabIndex = 4;
-            this.telephoneLabel.Text = "Téléphone:";
+            this.telephoneClientGroupBoxLabel.AutoSize = true;
+            this.telephoneClientGroupBoxLabel.Location = new System.Drawing.Point(26, 192);
+            this.telephoneClientGroupBoxLabel.Name = "telephoneClientGroupBoxLabel";
+            this.telephoneClientGroupBoxLabel.Size = new System.Drawing.Size(76, 16);
+            this.telephoneClientGroupBoxLabel.TabIndex = 4;
+            this.telephoneClientGroupBoxLabel.Text = "Téléphone:";
             // 
-            // codePostalLabel
+            // codePostalClientGroupBoxLabel
             // 
-            this.codePostalLabel.AutoSize = true;
-            this.codePostalLabel.Location = new System.Drawing.Point(26, 148);
-            this.codePostalLabel.Name = "codePostalLabel";
-            this.codePostalLabel.Size = new System.Drawing.Size(83, 16);
-            this.codePostalLabel.TabIndex = 3;
-            this.codePostalLabel.Text = "Code postal:";
+            this.codePostalClientGroupBoxLabel.AutoSize = true;
+            this.codePostalClientGroupBoxLabel.Location = new System.Drawing.Point(26, 148);
+            this.codePostalClientGroupBoxLabel.Name = "codePostalClientGroupBoxLabel";
+            this.codePostalClientGroupBoxLabel.Size = new System.Drawing.Size(83, 16);
+            this.codePostalClientGroupBoxLabel.TabIndex = 3;
+            this.codePostalClientGroupBoxLabel.Text = "Code postal:";
             // 
-            // adresseLabel
+            // adresseClientGroupBoxLabel
             // 
-            this.adresseLabel.AutoSize = true;
-            this.adresseLabel.Location = new System.Drawing.Point(26, 113);
-            this.adresseLabel.Name = "adresseLabel";
-            this.adresseLabel.Size = new System.Drawing.Size(61, 16);
-            this.adresseLabel.TabIndex = 2;
-            this.adresseLabel.Text = "Adresse:";
+            this.adresseClientGroupBoxLabel.AutoSize = true;
+            this.adresseClientGroupBoxLabel.Location = new System.Drawing.Point(26, 113);
+            this.adresseClientGroupBoxLabel.Name = "adresseClientGroupBoxLabel";
+            this.adresseClientGroupBoxLabel.Size = new System.Drawing.Size(61, 16);
+            this.adresseClientGroupBoxLabel.TabIndex = 2;
+            this.adresseClientGroupBoxLabel.Text = "Adresse:";
             // 
-            // prenomLabel
+            // prenomClientGroupBoxLabel
             // 
-            this.prenomLabel.AutoSize = true;
-            this.prenomLabel.Location = new System.Drawing.Point(26, 78);
-            this.prenomLabel.Name = "prenomLabel";
-            this.prenomLabel.Size = new System.Drawing.Size(57, 16);
-            this.prenomLabel.TabIndex = 1;
-            this.prenomLabel.Text = "Prénom:";
+            this.prenomClientGroupBoxLabel.AutoSize = true;
+            this.prenomClientGroupBoxLabel.Location = new System.Drawing.Point(26, 78);
+            this.prenomClientGroupBoxLabel.Name = "prenomClientGroupBoxLabel";
+            this.prenomClientGroupBoxLabel.Size = new System.Drawing.Size(57, 16);
+            this.prenomClientGroupBoxLabel.TabIndex = 1;
+            this.prenomClientGroupBoxLabel.Text = "Prénom:";
             // 
-            // nomLabel
+            // nomClientGroupBoxLabel
             // 
-            this.nomLabel.AutoSize = true;
-            this.nomLabel.Location = new System.Drawing.Point(26, 38);
-            this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(39, 16);
-            this.nomLabel.TabIndex = 0;
-            this.nomLabel.Text = "Nom:";
+            this.nomClientGroupBoxLabel.AutoSize = true;
+            this.nomClientGroupBoxLabel.Location = new System.Drawing.Point(26, 38);
+            this.nomClientGroupBoxLabel.Name = "nomClientGroupBoxLabel";
+            this.nomClientGroupBoxLabel.Size = new System.Drawing.Size(39, 16);
+            this.nomClientGroupBoxLabel.TabIndex = 0;
+            this.nomClientGroupBoxLabel.Text = "Nom:";
             // 
             // transactionGroupBox
             // 
-            this.transactionGroupBox.Controls.Add(this.prixMeubleLabel);
-            this.transactionGroupBox.Controls.Add(this.tailleComboBox);
-            this.transactionGroupBox.Controls.Add(this.manifacturierComboBox);
-            this.transactionGroupBox.Controls.Add(this.dateLivraisonDateTimePicker);
-            this.transactionGroupBox.Controls.Add(this.prixLabel);
-            this.transactionGroupBox.Controls.Add(this.tailleLabel);
-            this.transactionGroupBox.Controls.Add(this.manifacturierLabel);
-            this.transactionGroupBox.Controls.Add(this.dateLivraisonLabel);
+            this.transactionGroupBox.Controls.Add(this.prixMeubleTransactionGroupBoxLabel);
+            this.transactionGroupBox.Controls.Add(this.tailleTransactionGroupBoxComboBox);
+            this.transactionGroupBox.Controls.Add(this.manifacturierTransactionGroupBoxComboBox);
+            this.transactionGroupBox.Controls.Add(this.dateLivraisonTransactionGroupBoxDateTimePicker);
+            this.transactionGroupBox.Controls.Add(this.prixTransactionGroupBoxLabel);
+            this.transactionGroupBox.Controls.Add(this.tailleTransactionGroupBoxLabel);
+            this.transactionGroupBox.Controls.Add(this.manifacturierTransactionGroupBoxLabel);
+            this.transactionGroupBox.Controls.Add(this.dateLivraisonTransactionGroupBoxLabel);
             this.transactionGroupBox.Location = new System.Drawing.Point(735, 269);
             this.transactionGroupBox.Name = "transactionGroupBox";
             this.transactionGroupBox.Size = new System.Drawing.Size(431, 276);
@@ -227,76 +227,76 @@
             this.transactionGroupBox.TabStop = false;
             this.transactionGroupBox.Text = "Transaction:";
             // 
-            // prixMeubleLabel
+            // prixMeubleTransactionGroupBoxLabel
             // 
-            this.prixMeubleLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.prixMeubleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.prixMeubleLabel.Location = new System.Drawing.Point(144, 235);
-            this.prixMeubleLabel.Name = "prixMeubleLabel";
-            this.prixMeubleLabel.Size = new System.Drawing.Size(203, 23);
-            this.prixMeubleLabel.TabIndex = 14;
-            this.prixMeubleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.prixMeubleTransactionGroupBoxLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.prixMeubleTransactionGroupBoxLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prixMeubleTransactionGroupBoxLabel.Location = new System.Drawing.Point(144, 235);
+            this.prixMeubleTransactionGroupBoxLabel.Name = "prixMeubleTransactionGroupBoxLabel";
+            this.prixMeubleTransactionGroupBoxLabel.Size = new System.Drawing.Size(203, 23);
+            this.prixMeubleTransactionGroupBoxLabel.TabIndex = 14;
+            this.prixMeubleTransactionGroupBoxLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tailleComboBox
+            // tailleTransactionGroupBoxComboBox
             // 
-            this.tailleComboBox.FormattingEnabled = true;
-            this.tailleComboBox.Location = new System.Drawing.Point(147, 170);
-            this.tailleComboBox.Name = "tailleComboBox";
-            this.tailleComboBox.Size = new System.Drawing.Size(258, 24);
-            this.tailleComboBox.TabIndex = 13;
-            this.tailleComboBox.SelectedIndexChanged += new System.EventHandler(this.ManifacturierTailleComboBox_SelectedIndexChange);
+            this.tailleTransactionGroupBoxComboBox.FormattingEnabled = true;
+            this.tailleTransactionGroupBoxComboBox.Location = new System.Drawing.Point(147, 170);
+            this.tailleTransactionGroupBoxComboBox.Name = "tailleTransactionGroupBoxComboBox";
+            this.tailleTransactionGroupBoxComboBox.Size = new System.Drawing.Size(258, 24);
+            this.tailleTransactionGroupBoxComboBox.TabIndex = 13;
+            this.tailleTransactionGroupBoxComboBox.SelectedIndexChanged += new System.EventHandler(this.ManifacturierTailleComboBox_SelectedIndexChange);
             // 
-            // manifacturierComboBox
+            // manifacturierTransactionGroupBoxComboBox
             // 
-            this.manifacturierComboBox.FormattingEnabled = true;
-            this.manifacturierComboBox.Location = new System.Drawing.Point(147, 99);
-            this.manifacturierComboBox.Name = "manifacturierComboBox";
-            this.manifacturierComboBox.Size = new System.Drawing.Size(258, 24);
-            this.manifacturierComboBox.TabIndex = 12;
-            this.manifacturierComboBox.SelectedIndexChanged += new System.EventHandler(this.ManifacturierTailleComboBox_SelectedIndexChange);
+            this.manifacturierTransactionGroupBoxComboBox.FormattingEnabled = true;
+            this.manifacturierTransactionGroupBoxComboBox.Location = new System.Drawing.Point(147, 99);
+            this.manifacturierTransactionGroupBoxComboBox.Name = "manifacturierTransactionGroupBoxComboBox";
+            this.manifacturierTransactionGroupBoxComboBox.Size = new System.Drawing.Size(258, 24);
+            this.manifacturierTransactionGroupBoxComboBox.TabIndex = 12;
+            this.manifacturierTransactionGroupBoxComboBox.SelectedIndexChanged += new System.EventHandler(this.ManifacturierTailleComboBox_SelectedIndexChange);
             // 
-            // dateLivraisonDateTimePicker
+            // dateLivraisonTransactionGroupBoxDateTimePicker
             // 
-            this.dateLivraisonDateTimePicker.Location = new System.Drawing.Point(147, 46);
-            this.dateLivraisonDateTimePicker.Name = "dateLivraisonDateTimePicker";
-            this.dateLivraisonDateTimePicker.Size = new System.Drawing.Size(258, 22);
-            this.dateLivraisonDateTimePicker.TabIndex = 11;
+            this.dateLivraisonTransactionGroupBoxDateTimePicker.Location = new System.Drawing.Point(147, 46);
+            this.dateLivraisonTransactionGroupBoxDateTimePicker.Name = "dateLivraisonTransactionGroupBoxDateTimePicker";
+            this.dateLivraisonTransactionGroupBoxDateTimePicker.Size = new System.Drawing.Size(258, 22);
+            this.dateLivraisonTransactionGroupBoxDateTimePicker.TabIndex = 11;
             // 
-            // prixLabel
+            // prixTransactionGroupBoxLabel
             // 
-            this.prixLabel.AutoSize = true;
-            this.prixLabel.Location = new System.Drawing.Point(40, 239);
-            this.prixLabel.Name = "prixLabel";
-            this.prixLabel.Size = new System.Drawing.Size(32, 16);
-            this.prixLabel.TabIndex = 10;
-            this.prixLabel.Text = "Prix:";
+            this.prixTransactionGroupBoxLabel.AutoSize = true;
+            this.prixTransactionGroupBoxLabel.Location = new System.Drawing.Point(40, 239);
+            this.prixTransactionGroupBoxLabel.Name = "prixTransactionGroupBoxLabel";
+            this.prixTransactionGroupBoxLabel.Size = new System.Drawing.Size(32, 16);
+            this.prixTransactionGroupBoxLabel.TabIndex = 10;
+            this.prixTransactionGroupBoxLabel.Text = "Prix:";
             // 
-            // tailleLabel
+            // tailleTransactionGroupBoxLabel
             // 
-            this.tailleLabel.AutoSize = true;
-            this.tailleLabel.Location = new System.Drawing.Point(40, 170);
-            this.tailleLabel.Name = "tailleLabel";
-            this.tailleLabel.Size = new System.Drawing.Size(44, 16);
-            this.tailleLabel.TabIndex = 9;
-            this.tailleLabel.Text = "Taille:";
+            this.tailleTransactionGroupBoxLabel.AutoSize = true;
+            this.tailleTransactionGroupBoxLabel.Location = new System.Drawing.Point(40, 170);
+            this.tailleTransactionGroupBoxLabel.Name = "tailleTransactionGroupBoxLabel";
+            this.tailleTransactionGroupBoxLabel.Size = new System.Drawing.Size(44, 16);
+            this.tailleTransactionGroupBoxLabel.TabIndex = 9;
+            this.tailleTransactionGroupBoxLabel.Text = "Taille:";
             // 
-            // manifacturierLabel
+            // manifacturierTransactionGroupBoxLabel
             // 
-            this.manifacturierLabel.AutoSize = true;
-            this.manifacturierLabel.Location = new System.Drawing.Point(40, 107);
-            this.manifacturierLabel.Name = "manifacturierLabel";
-            this.manifacturierLabel.Size = new System.Drawing.Size(86, 16);
-            this.manifacturierLabel.TabIndex = 8;
-            this.manifacturierLabel.Text = "Manifacturier:";
+            this.manifacturierTransactionGroupBoxLabel.AutoSize = true;
+            this.manifacturierTransactionGroupBoxLabel.Location = new System.Drawing.Point(40, 107);
+            this.manifacturierTransactionGroupBoxLabel.Name = "manifacturierTransactionGroupBoxLabel";
+            this.manifacturierTransactionGroupBoxLabel.Size = new System.Drawing.Size(86, 16);
+            this.manifacturierTransactionGroupBoxLabel.TabIndex = 8;
+            this.manifacturierTransactionGroupBoxLabel.Text = "Manifacturier:";
             // 
-            // dateLivraisonLabel
+            // dateLivraisonTransactionGroupBoxLabel
             // 
-            this.dateLivraisonLabel.AutoSize = true;
-            this.dateLivraisonLabel.Location = new System.Drawing.Point(18, 49);
-            this.dateLivraisonLabel.Name = "dateLivraisonLabel";
-            this.dateLivraisonLabel.Size = new System.Drawing.Size(111, 16);
-            this.dateLivraisonLabel.TabIndex = 7;
-            this.dateLivraisonLabel.Text = "Date de livraison:";
+            this.dateLivraisonTransactionGroupBoxLabel.AutoSize = true;
+            this.dateLivraisonTransactionGroupBoxLabel.Location = new System.Drawing.Point(18, 49);
+            this.dateLivraisonTransactionGroupBoxLabel.Name = "dateLivraisonTransactionGroupBoxLabel";
+            this.dateLivraisonTransactionGroupBoxLabel.Size = new System.Drawing.Size(111, 16);
+            this.dateLivraisonTransactionGroupBoxLabel.TabIndex = 7;
+            this.dateLivraisonTransactionGroupBoxLabel.Text = "Date de livraison:";
             // 
             // enregistreButton
             // 
@@ -346,7 +346,7 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // toolStripSeparator
@@ -375,7 +375,7 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
@@ -437,28 +437,28 @@
         private System.Windows.Forms.GroupBox transactionGroupBox;
         private System.Windows.Forms.Button enregistreButton;
         private System.Windows.Forms.Button quitterButton;
-        private System.Windows.Forms.Label dateLivraisonLabel;
-        private System.Windows.Forms.Label marqueMeubleLabel;
-        private System.Windows.Forms.Label typeMeubleLabel;
-        private System.Windows.Forms.Label telephoneLabel;
-        private System.Windows.Forms.Label codePostalLabel;
-        private System.Windows.Forms.Label adresseLabel;
-        private System.Windows.Forms.Label prenomLabel;
-        private System.Windows.Forms.Label nomLabel;
-        private System.Windows.Forms.ComboBox marqueMeubleComboBox;
-        private System.Windows.Forms.ComboBox typeMeubleComboBox;
-        private System.Windows.Forms.MaskedTextBox telephoneMaskedTextBox;
-        private System.Windows.Forms.MaskedTextBox codePostalMaskedTextBox;
-        private System.Windows.Forms.ComboBox tailleComboBox;
-        private System.Windows.Forms.ComboBox manifacturierComboBox;
-        private System.Windows.Forms.DateTimePicker dateLivraisonDateTimePicker;
-        private System.Windows.Forms.Label prixLabel;
-        private System.Windows.Forms.Label tailleLabel;
-        private System.Windows.Forms.Label manifacturierLabel;
-        private System.Windows.Forms.Label prixMeubleLabel;
-        private System.Windows.Forms.MaskedTextBox nomMaskedTextBox;
-        private System.Windows.Forms.MaskedTextBox adresseMaskedTextBox;
-        private System.Windows.Forms.MaskedTextBox prenomMaskedTextBox;
+        private System.Windows.Forms.Label dateLivraisonTransactionGroupBoxLabel;
+        private System.Windows.Forms.Label marqueMeubleClientGroupBoxLabel;
+        private System.Windows.Forms.Label typeMeubleClientGroupBoxLabel;
+        private System.Windows.Forms.Label telephoneClientGroupBoxLabel;
+        private System.Windows.Forms.Label codePostalClientGroupBoxLabel;
+        private System.Windows.Forms.Label adresseClientGroupBoxLabel;
+        private System.Windows.Forms.Label prenomClientGroupBoxLabel;
+        private System.Windows.Forms.Label nomClientGroupBoxLabel;
+        private System.Windows.Forms.ComboBox marqueMeubleClientGroupBoxComboBox;
+        private System.Windows.Forms.ComboBox typeMeubleClientGroupBoxComboBox;
+        private System.Windows.Forms.MaskedTextBox telephoneClientGroupBoxMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox codePostalClientGroupBoxMaskedTextBox;
+        private System.Windows.Forms.ComboBox tailleTransactionGroupBoxComboBox;
+        private System.Windows.Forms.ComboBox manifacturierTransactionGroupBoxComboBox;
+        private System.Windows.Forms.DateTimePicker dateLivraisonTransactionGroupBoxDateTimePicker;
+        private System.Windows.Forms.Label prixTransactionGroupBoxLabel;
+        private System.Windows.Forms.Label tailleTransactionGroupBoxLabel;
+        private System.Windows.Forms.Label manifacturierTransactionGroupBoxLabel;
+        private System.Windows.Forms.Label prixMeubleTransactionGroupBoxLabel;
+        private System.Windows.Forms.MaskedTextBox nomClientGroupBoxMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox adresseClientGroupBoxMaskedTextBox;
+        private System.Windows.Forms.MaskedTextBox prenomClientGroupBoxMaskedTextBox;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.MenuStrip VentesMeublesMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

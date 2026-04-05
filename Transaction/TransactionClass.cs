@@ -23,26 +23,26 @@ namespace Transaction
     {
 
         #region Déclaration des tableaux
-        string[] tailles;
-        string[] manifactoriers;
-        decimal[,] prix;
+        string[] tTailles;
+        string[] tManifacturiers;
+        decimal[,] tPrix;
         #endregion
 
         #region Initialisation des tableaux
 
         private void InitTaille()
         {
-            tailles = new string[4] { "7 Pied", "5 Pied", "4 Pied", "3 Pied" };
+            tTailles = new string[4] { "7 Pied", "5 Pied", "4 Pied", "3 Pied" };
         }
 
         private void InitManifacturier()
         {
-            manifactoriers = new string[4] { "Thomas's Homemade Furniture", "Jimmy's Antiques", "Lucas’s Fine Woodworks", "Alexis's Timeless Treasures" };
+            tManifacturiers = new string[4] { "Thomas's Homemade Furniture", "Jimmy's Antiques", "Lucas’s Fine Woodworks", "Alexis's Timeless Treasures" };
         }
 
         private void InitPrix()
         {
-            prix = new decimal[4, 4]
+            tPrix = new decimal[4, 4]
             {
                 {500.00M, 300.00M, 200.00M, 120.00M},
                 {2000.00M, 1850.00M, 1500.00M, 2200.00M},
@@ -66,28 +66,30 @@ namespace Transaction
         #region Manifacturiers des meubles
 
         public string[] GetManifacturiers()
-            { return manifactoriers; }
+            { return tManifacturiers; }
 
         #endregion
 
         #region Tailles des meubles
     
         public string[] GetTailles()
-            { return tailles; }
+            { return tTailles; }
 
         #endregion
 
         #region Prix des meubles
 
-        public decimal GetPrix(int manifactorier, int taille)
+        public decimal GetPrix(int manifacturier, int taille)
         {
-            if (manifactorier >= manifactoriers.GetLowerBound(0) && manifactorier <= manifactoriers.GetUpperBound(0))
+            if (manifacturier >= tManifacturiers.GetLowerBound(0) && manifacturier <= tManifacturiers.GetUpperBound(0))
             {
-                if (taille >= tailles.GetLowerBound(0) && taille <= tailles.GetUpperBound(0))
+                if (taille >= tTailles.GetLowerBound(0) && taille <= tTailles.GetUpperBound(0))
                 {
-                    return prix[manifactorier, taille];
+                    return tPrix[manifacturier, taille];
                 }
                 else         // utiliser general class pour argument exceptions
+
+                    // VERIFIER AVEC PROF SI C NECESSAIRE DE METTRE LE VERIFICATIONS ICI
                     throw new ArgumentOutOfRangeException("La valeur de la taille n'est pas bonne...");
             }
                 else

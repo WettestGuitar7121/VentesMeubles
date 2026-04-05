@@ -45,18 +45,19 @@ namespace VentesMeubles
         #region Initialisation
         private void VentesMeublesForm_Load(object sender, EventArgs e)
         {
+            g.InitMessages();
 
             try
             {
                 oTrans = new TransactionClass();
 
-                manifacturierComboBox.Items.AddRange(oTrans.GetManifacturiers());
-                manifacturierComboBox.SelectedIndex = 0;
+                manifacturierTransactionGroupBoxComboBox.Items.AddRange(oTrans.GetManifacturiers());
+                manifacturierTransactionGroupBoxComboBox.SelectedIndex = 0;
 
-                tailleComboBox.Items.AddRange(oTrans.GetTailles());
-                tailleComboBox.SelectedIndex = 0;
+                tailleTransactionGroupBoxComboBox.Items.AddRange(oTrans.GetTailles());
+                tailleTransactionGroupBoxComboBox.SelectedIndex = 0;
 
-                dateLivraisonDateTimePicker.Text= DateTime.Now.ToLongDateString();
+                dateLivraisonTransactionGroupBoxDateTimePicker.Text= DateTime.Now.ToLongDateString();
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -84,8 +85,8 @@ namespace VentesMeubles
         {
             try
             {
-                if (manifacturierComboBox.SelectedIndex != -1 && tailleComboBox.SelectedIndex != -1)
-                    prixMeubleLabel.Text = oTrans.GetPrix(manifacturierComboBox.SelectedIndex, tailleComboBox.SelectedIndex).ToString("C2");
+                if (manifacturierTransactionGroupBoxComboBox.SelectedIndex != -1 && tailleTransactionGroupBoxComboBox.SelectedIndex != -1)
+                    prixMeubleTransactionGroupBoxLabel.Text = oTrans.GetPrix(manifacturierTransactionGroupBoxComboBox.SelectedIndex, tailleTransactionGroupBoxComboBox.SelectedIndex).ToString("C2");
             }
             catch (ArgumentOutOfRangeException ex)
             {
