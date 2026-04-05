@@ -4,3 +4,9 @@ C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_P
 C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\Transaction\obj\Debug\Transaction.csproj.CoreCompileInputs.cache
 C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\Transaction\obj\Debug\Transaction.dll
 C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\Transaction\obj\Debug\Transaction.pdb
+C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Transaction\bin\Debug\Transaction.dll
+C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Transaction\bin\Debug\Transaction.pdb
+C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Transaction\obj\Debug\Transaction.csproj.AssemblyReference.cache
+C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Transaction\obj\Debug\Transaction.csproj.CoreCompileInputs.cache
+C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Transaction\obj\Debug\Transaction.dll
+C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Transaction\obj\Debug\Transaction.pdb

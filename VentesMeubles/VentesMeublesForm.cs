@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using g = VentesMeubles.VentesMeublesGeneraleClass;
 using ce = VentesMeubles.VentesMeublesGeneraleClass.CodesErreurs;
+using Transaction;
 
 namespace VentesMeubles
 {
@@ -31,6 +32,8 @@ namespace VentesMeubles
     {
         #region Déclaration des membres privées
 
+        TransactionClass oTrans;
+
         #endregion
 
         #region Constructeurs
@@ -40,11 +43,66 @@ namespace VentesMeubles
         }
         #endregion
         #region Initialisation
+        private void VentesMeublesForm_Load(object sender, EventArgs e)
+        {
 
+            try
+            {
+                oTrans = new TransactionClass();
+
+                manifacturierComboBox.Items.AddRange(oTrans.GetManifacturiers());
+                manifacturierComboBox.SelectedIndex = 0;
+
+                tailleComboBox.Items.AddRange(oTrans.GetTailles());
+                tailleComboBox.SelectedIndex = 0;
+
+                dateLivraisonDateTimePicker.Text= DateTime.Now.ToLongDateString();
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (ArgumentException ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
+
+
+
+        }
         #endregion
 
         #region Obtenir le prix
+        private void ManifacturierTailleComboBox_SelectedIndexChange(object sender, EventArgs e)
+        {
+            try
+            {
+                if (manifacturierComboBox.SelectedIndex != -1 && tailleComboBox.SelectedIndex != -1)
+                    prixMeubleLabel.Text = oTrans.GetPrix(manifacturierComboBox.SelectedIndex, tailleComboBox.SelectedIndex).ToString("C2");
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
 
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (ArgumentException ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
+        }
         #endregion
 
         #region Quitter
@@ -52,6 +110,11 @@ namespace VentesMeubles
         {
             this.Close();
         }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
     }
 }
