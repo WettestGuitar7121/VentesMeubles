@@ -25,7 +25,7 @@ namespace VentesMeubles
  
     /// <summary>
     /// Les saisies d'une transaction
-    /// </summary>
+    /// </summary>xzczxczxczxc
     
     public partial class VentesMeublesForm : Form
     {
@@ -53,5 +53,10 @@ namespace VentesMeubles
             this.Close();
         }
         #endregion
+
+        private void VentesMeublesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
