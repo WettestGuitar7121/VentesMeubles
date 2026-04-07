@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Types
 {
-    public class Types
+    public class TypesClass
     {
     }
 }
