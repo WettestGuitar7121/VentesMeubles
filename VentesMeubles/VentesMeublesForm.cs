@@ -110,7 +110,7 @@ namespace VentesMeubles
             try
             {
                 if (manifacturierTransactionGroupBoxComboBox.SelectedIndex != -1 && tailleTransactionGroupBoxComboBox.SelectedIndex != -1)
-                    prixMeubleTransactionGroupBoxLabel.Text = oTrans.GetPrix(manifacturierTransactionGroupBoxComboBox.SelectedIndex, tailleTransactionGroupBoxComboBox.SelectedIndex).ToString("C2");
+                    prixMeubleTransactionGroupBoxLabel.Text = oTrans.GetPrix(manifacturierTransactionGroupBoxComboBox.SelectedItem.ToString(), tailleTransactionGroupBoxComboBox.SelectedItem.ToString()).ToString("C2");
             }
             catch (ArgumentOutOfRangeException ex)
             {
