@@ -95,26 +95,6 @@ namespace Transaction
             Prix = prixDecimal;
         
         }
-        public void Enregister()
-        {
-            Console.WriteLine(Nom, Prenom, Adresse, CodePostal, Telephone, Type, Style, Manifacturier, Taille, DateLivraison, Prix);
-        }
-        public void Enregister(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
-        {
-            Nom = nomStr;
-            Prenom = prenomStr;
-            Adresse = adresseStr;
-            CodePostal = codePostal;
-            Telephone = telephoneStr;
-            Type = typeMeubleStr;
-            Style = styleMeubleStr;
-            Manifacturier = manifacturierStr;
-            Taille = telephoneStr;
-            DateLivraison = dateLivraisonDateTime;
-            Prix = prixDecimal;
-
-            Enregister();
-        }
 
         #endregion
 
@@ -234,6 +214,28 @@ namespace Transaction
         {
             get { return prixDecimal; }
             set { prixDecimal = value; }
+        }
+        #endregion
+        #region Enregistrer
+        public void Enregister()
+        {
+            Console.WriteLine(Nom, Prenom, Adresse, CodePostal, Telephone, Type, Style, Manifacturier, Taille, DateLivraison, Prix);
+        }
+        public void Enregister(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
+        {
+            Nom = nomStr;
+            Prenom = prenomStr;
+            Adresse = adresseStr;
+            CodePostal = codePostal;
+            Telephone = telephoneStr;
+            Type = typeMeubleStr;
+            Style = styleMeubleStr;
+            Manifacturier = manifacturierStr;
+            Taille = telephoneStr;
+            DateLivraison = dateLivraisonDateTime;
+            Prix = prixDecimal;
+
+            Enregister();
         }
         #endregion
     }
