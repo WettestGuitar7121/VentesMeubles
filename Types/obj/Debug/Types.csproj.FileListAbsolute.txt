@@ -4,3 +4,9 @@ C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_P
 C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Types\obj\Debug\Types.csproj.CoreCompileInputs.cache
 C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Types\obj\Debug\Types.dll
 C:\Users\Olivier\OneDrive - MONCCNB\COURS_CCNB\HIVER2026\PROG1380_DevAppli.net_Paul\DEMOS\asasdsad\Types\obj\Debug\Types.pdb
+C:\Users\BrandonP\Source\Repos\VentesMeubles\Types\bin\Debug\Types.dll
+C:\Users\BrandonP\Source\Repos\VentesMeubles\Types\bin\Debug\Types.pdb
+C:\Users\BrandonP\Source\Repos\VentesMeubles\Types\obj\Debug\Types.csproj.AssemblyReference.cache
+C:\Users\BrandonP\Source\Repos\VentesMeubles\Types\obj\Debug\Types.csproj.CoreCompileInputs.cache
+C:\Users\BrandonP\Source\Repos\VentesMeubles\Types\obj\Debug\Types.dll
+C:\Users\BrandonP\Source\Repos\VentesMeubles\Types\obj\Debug\Types.pdb

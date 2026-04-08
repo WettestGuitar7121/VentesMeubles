@@ -9,6 +9,7 @@ Date : Le 26-27 fevrier 2026
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,25 @@ namespace Transaction
     /// </summary>
     public class TransactionClass
     {
+        #region Declaration des champs priver
+
+        private int idInt;
+        private string nomStr;
+
+        private string prenomStr;
+        private string adresseStr;
+        private string codePostalStr;
+        private string telephoneStr;
+        private string typeMeubleStr;
+        private string styleMeubleStr;
+
+        private string manifacturierStr;
+        private string tailleStr;
+    
+        private DateTime dateLivraisonDateTime;
+        private decimal prixDecimal;
+
+        #endregion
 
         #region Déclaration des tableaux
         string[] tTailles;
@@ -59,7 +79,42 @@ namespace Transaction
             InitManifacturier();
             InitPrix();
         }
+
+        public TransactionClass(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
+        {
+            Nom = nomStr;
+            Prenom = prenomStr;
+            Adresse = adresseStr;
+            CodePostal = codePostal;
+            Telephone = telephoneStr;
+            Type = typeMeubleStr;
+            Style = styleMeubleStr;
+            Manifacturier = manifacturierStr;
+            Taille = telephoneStr;
+            DateLivraison = dateLivraisonDateTime;
+            Prix = prixDecimal;
         
+        }
+        public void Enregister()
+        {
+            Console.WriteLine(Nom, Prenom, Adresse, CodePostal, Telephone, Type, Style, Manifacturier, Taille, DateLivraison, Prix);
+        }
+        public void Enregister(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
+        {
+            Nom = nomStr;
+            Prenom = prenomStr;
+            Adresse = adresseStr;
+            CodePostal = codePostal;
+            Telephone = telephoneStr;
+            Type = typeMeubleStr;
+            Style = styleMeubleStr;
+            Manifacturier = manifacturierStr;
+            Taille = telephoneStr;
+            DateLivraison = dateLivraisonDateTime;
+            Prix = prixDecimal;
+
+            Enregister();
+        }
 
         #endregion
 
@@ -110,6 +165,75 @@ namespace Transaction
                     throw new ArgumentException("La valeur de la taille n'est pas bonne...");
             else throw new ArgumentException("La manifactorier n'est pas valide...");
 
+        }
+        #endregion
+        
+        #region Getters/Setters
+
+        public int Id
+        {
+            get {return idInt;}
+        }
+
+        public string Nom
+        {
+            get { return nomStr;}
+            set { nomStr = value;}
+        }
+
+        public string Prenom
+        {
+            get { return prenomStr; }
+            set { prenomStr = value;}
+        }
+
+        public string Adresse
+        {
+            get { return adresseStr; }
+            set { adresseStr = value; }
+        }
+
+        public string CodePostal
+        {
+            get { return codePostalStr; }
+            set { codePostalStr = value; }
+        }
+        public string Telephone
+        {
+            get { return telephoneStr; }
+            set { telephoneStr = value; }
+        }
+        public string Type
+        {
+            get { return typeMeubleStr; }
+            set { typeMeubleStr = value; }
+        }
+        public string Style
+        {
+            get { return styleMeubleStr; }
+            set { styleMeubleStr = value; }
+        }
+        public string Manifacturier
+        {
+            get { return manifacturierStr; }
+            set { manifacturierStr = value; }
+        }
+        public string Taille
+        {
+            get { return tailleStr; }
+            set { tailleStr = value; }
+        }
+
+        public DateTime DateLivraison
+        {
+            get { return dateLivraisonDateTime; }
+            set { dateLivraisonDateTime = value; }
+        }
+
+        public decimal Prix
+        {
+            get { return prixDecimal; }
+            set { prixDecimal = value; }
         }
         #endregion
     }
