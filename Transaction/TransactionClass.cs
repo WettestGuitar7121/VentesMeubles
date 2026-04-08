@@ -95,6 +95,22 @@ namespace Transaction
                 else
                     throw new ArgumentOutOfRangeException("La manifactorier n'est pas valide...");
         }
+
+        public decimal GetPrix(string manifacturier, string taille)
+        {
+            int manifacturierInt, tailleInt;
+
+            manifacturierInt=Array.IndexOf(tManifacturiers, manifacturier);
+            tailleInt=Array.IndexOf(tTailles, taille);
+
+            if (manifacturierInt != -1)
+                if (tailleInt != -1)
+                    return tPrix[manifacturierInt, tailleInt];
+                else
+                    throw new ArgumentException("La valeur de la taille n'est pas bonne...");
+            else throw new ArgumentException("La manifactorier n'est pas valide...");
+
+        }
         #endregion
     }
 }

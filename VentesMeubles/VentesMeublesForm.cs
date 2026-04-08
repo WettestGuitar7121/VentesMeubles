@@ -17,9 +17,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using g = VentesMeubles.VentesMeublesGeneraleClass;
-using ce = VentesMeubles.VentesMeublesGeneraleClass.CodesErreurs;
 using Transaction;
+using Types;
+using static Types.TypesClass;
+using ce = VentesMeubles.VentesMeublesGeneraleClass.CodesErreurs;
+using g = VentesMeubles.VentesMeublesGeneraleClass;
 
 namespace VentesMeubles
 {
@@ -33,6 +35,7 @@ namespace VentesMeubles
         #region Déclaration des membres privées
 
         TransactionClass oTrans;
+        TypesClass oTypes;
 
         #endregion
 
@@ -76,6 +79,27 @@ namespace VentesMeubles
             }
 
 
+            try
+            {
+                oTypes = new TypesClass();
+
+                typeMeubleClientGroupBoxComboBox.Items.AddRange(oTypes.GetTypes(TypesClass.CodeTypes.Types));
+                typeMeubleClientGroupBoxComboBox.SelectedIndex = 0;
+                styleMeubleClientGroupBoxComboBox.Items.AddRange(oTypes.GetTypes(TypesClass.CodeTypes.Styles));
+                styleMeubleClientGroupBoxComboBox.SelectedIndex = 0;
+
+
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString()); ;
+            }
 
         }
         #endregion
@@ -106,6 +130,14 @@ namespace VentesMeubles
         }
         #endregion
 
+        #region AboutBox
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentesMeublesAboutBox oVentesMeublesAboutBox = new VentesMeublesAboutBox();
+            oVentesMeublesAboutBox.ShowDialog();
+        }
+        #endregion
+
         #region Quitter
         private void quitterButton_Click(object sender, EventArgs e)
         {
@@ -117,5 +149,6 @@ namespace VentesMeubles
         }
 
         #endregion
+
     }
 }

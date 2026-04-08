@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VentesMeublesAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentesMeublesAboutBox.Designer.cs">
+      <DependentUpon>VentesMeublesAboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentesMeublesGeneraleClass.cs" />
     <Compile Include="VentesMeublesForm.cs">
       <SubType>Form</SubType>
@@ -67,6 +73,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentesMeublesAboutBox.resx">
+      <DependentUpon>VentesMeublesAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentesMeublesForm.resx">
       <DependentUpon>VentesMeublesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Types\Types.csproj">
+      <Project>{b081386d-7112-46fe-a9c9-4b0df106e149}</Project>
+      <Name>Types</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -33,11 +33,11 @@
             this.adresseClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.prenomClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.nomClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.marqueMeubleClientGroupBoxComboBox = new System.Windows.Forms.ComboBox();
+            this.styleMeubleClientGroupBoxComboBox = new System.Windows.Forms.ComboBox();
             this.typeMeubleClientGroupBoxComboBox = new System.Windows.Forms.ComboBox();
             this.telephoneClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.codePostalClientGroupBoxMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.marqueMeubleClientGroupBoxLabel = new System.Windows.Forms.Label();
+            this.styleMeubleClientGroupBoxLabel = new System.Windows.Forms.Label();
             this.typeMeubleClientGroupBoxLabel = new System.Windows.Forms.Label();
             this.telephoneClientGroupBoxLabel = new System.Windows.Forms.Label();
             this.codePostalClientGroupBoxLabel = new System.Windows.Forms.Label();
@@ -76,11 +76,11 @@
             this.clientGroupBox.Controls.Add(this.adresseClientGroupBoxMaskedTextBox);
             this.clientGroupBox.Controls.Add(this.prenomClientGroupBoxMaskedTextBox);
             this.clientGroupBox.Controls.Add(this.nomClientGroupBoxMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.marqueMeubleClientGroupBoxComboBox);
+            this.clientGroupBox.Controls.Add(this.styleMeubleClientGroupBoxComboBox);
             this.clientGroupBox.Controls.Add(this.typeMeubleClientGroupBoxComboBox);
             this.clientGroupBox.Controls.Add(this.telephoneClientGroupBoxMaskedTextBox);
             this.clientGroupBox.Controls.Add(this.codePostalClientGroupBoxMaskedTextBox);
-            this.clientGroupBox.Controls.Add(this.marqueMeubleClientGroupBoxLabel);
+            this.clientGroupBox.Controls.Add(this.styleMeubleClientGroupBoxLabel);
             this.clientGroupBox.Controls.Add(this.typeMeubleClientGroupBoxLabel);
             this.clientGroupBox.Controls.Add(this.telephoneClientGroupBoxLabel);
             this.clientGroupBox.Controls.Add(this.codePostalClientGroupBoxLabel);
@@ -115,13 +115,13 @@
             this.nomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
             this.nomClientGroupBoxMaskedTextBox.TabIndex = 14;
             // 
-            // marqueMeubleClientGroupBoxComboBox
+            // styleMeubleClientGroupBoxComboBox
             // 
-            this.marqueMeubleClientGroupBoxComboBox.FormattingEnabled = true;
-            this.marqueMeubleClientGroupBoxComboBox.Location = new System.Drawing.Point(165, 265);
-            this.marqueMeubleClientGroupBoxComboBox.Name = "marqueMeubleClientGroupBoxComboBox";
-            this.marqueMeubleClientGroupBoxComboBox.Size = new System.Drawing.Size(166, 24);
-            this.marqueMeubleClientGroupBoxComboBox.TabIndex = 13;
+            this.styleMeubleClientGroupBoxComboBox.FormattingEnabled = true;
+            this.styleMeubleClientGroupBoxComboBox.Location = new System.Drawing.Point(165, 265);
+            this.styleMeubleClientGroupBoxComboBox.Name = "styleMeubleClientGroupBoxComboBox";
+            this.styleMeubleClientGroupBoxComboBox.Size = new System.Drawing.Size(166, 24);
+            this.styleMeubleClientGroupBoxComboBox.TabIndex = 13;
             // 
             // typeMeubleClientGroupBoxComboBox
             // 
@@ -147,14 +147,14 @@
             this.codePostalClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(166, 22);
             this.codePostalClientGroupBoxMaskedTextBox.TabIndex = 10;
             // 
-            // marqueMeubleClientGroupBoxLabel
+            // styleMeubleClientGroupBoxLabel
             // 
-            this.marqueMeubleClientGroupBoxLabel.AutoSize = true;
-            this.marqueMeubleClientGroupBoxLabel.Location = new System.Drawing.Point(26, 268);
-            this.marqueMeubleClientGroupBoxLabel.Name = "marqueMeubleClientGroupBoxLabel";
-            this.marqueMeubleClientGroupBoxLabel.Size = new System.Drawing.Size(123, 16);
-            this.marqueMeubleClientGroupBoxLabel.TabIndex = 6;
-            this.marqueMeubleClientGroupBoxLabel.Text = "Marque de Meuble:";
+            this.styleMeubleClientGroupBoxLabel.AutoSize = true;
+            this.styleMeubleClientGroupBoxLabel.Location = new System.Drawing.Point(26, 268);
+            this.styleMeubleClientGroupBoxLabel.Name = "styleMeubleClientGroupBoxLabel";
+            this.styleMeubleClientGroupBoxLabel.Size = new System.Drawing.Size(107, 16);
+            this.styleMeubleClientGroupBoxLabel.TabIndex = 6;
+            this.styleMeubleClientGroupBoxLabel.Text = "Style de Meuble:";
             // 
             // typeMeubleClientGroupBoxLabel
             // 
@@ -352,7 +352,7 @@
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(170, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -360,13 +360,13 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -383,6 +383,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aboutToolStripMenuItem.Text = "&About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // compagnieBackgroundLabel
             // 
@@ -438,14 +439,14 @@
         private System.Windows.Forms.Button enregistreButton;
         private System.Windows.Forms.Button quitterButton;
         private System.Windows.Forms.Label dateLivraisonTransactionGroupBoxLabel;
-        private System.Windows.Forms.Label marqueMeubleClientGroupBoxLabel;
+        private System.Windows.Forms.Label styleMeubleClientGroupBoxLabel;
         private System.Windows.Forms.Label typeMeubleClientGroupBoxLabel;
         private System.Windows.Forms.Label telephoneClientGroupBoxLabel;
         private System.Windows.Forms.Label codePostalClientGroupBoxLabel;
         private System.Windows.Forms.Label adresseClientGroupBoxLabel;
         private System.Windows.Forms.Label prenomClientGroupBoxLabel;
         private System.Windows.Forms.Label nomClientGroupBoxLabel;
-        private System.Windows.Forms.ComboBox marqueMeubleClientGroupBoxComboBox;
+        private System.Windows.Forms.ComboBox styleMeubleClientGroupBoxComboBox;
         private System.Windows.Forms.ComboBox typeMeubleClientGroupBoxComboBox;
         private System.Windows.Forms.MaskedTextBox telephoneClientGroupBoxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox codePostalClientGroupBoxMaskedTextBox;
