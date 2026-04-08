@@ -232,6 +232,7 @@ namespace Transaction
             Style = styleMeubleStr;
             Manifacturier = manifacturierStr;
             Taille = telephoneStr;
+
             DateLivraison = dateLivraisonDateTime;
             Prix = prixDecimal;
 
