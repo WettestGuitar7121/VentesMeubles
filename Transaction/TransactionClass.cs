@@ -219,7 +219,7 @@ namespace Transaction
         #region Enregistrer
         public void Enregister()
         {
-            Console.WriteLine(Nom, Prenom, Adresse, CodePostal, Telephone, Type, Style, Manifacturier, Taille, DateLivraison, Prix);
+            Console.WriteLine(Nom+ Prenom + Adresse + CodePostal + Telephone + Type + Style + Manifacturier + Taille + DateLivraison + Prix);
         }
         public void Enregister(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
         {
@@ -231,7 +231,7 @@ namespace Transaction
             Type = typeMeubleStr;
             Style = styleMeubleStr;
             Manifacturier = manifacturierStr;
-            Taille = telephoneStr;
+            Taille = tailleStr;
 
             DateLivraison = dateLivraisonDateTime;
             Prix = prixDecimal;

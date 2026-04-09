@@ -307,6 +307,7 @@
             this.enregistreButton.TabIndex = 0;
             this.enregistreButton.Text = "Enregistrer";
             this.enregistreButton.UseVisualStyleBackColor = false;
+            this.enregistreButton.Click += new System.EventHandler(this.enregistreButton_Click);
             // 
             // quitterButton
             // 

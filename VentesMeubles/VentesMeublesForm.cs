@@ -45,6 +45,7 @@ namespace VentesMeubles
             InitializeComponent();
         }
         #endregion
+
         #region Initialisation
         private void VentesMeublesForm_Load(object sender, EventArgs e)
         {
@@ -150,5 +151,24 @@ namespace VentesMeubles
 
         #endregion
 
+        private void enregistreButton_Click(object sender, EventArgs e)
+        {
+
+            TransactionClass oTrans;
+
+            oTrans = new TransactionClass();
+
+            oTrans.Enregister(nomClientGroupBoxMaskedTextBox.Text,
+                prenomClientGroupBoxMaskedTextBox.Text,
+                adresseClientGroupBoxMaskedTextBox.Text,
+                codePostalClientGroupBoxMaskedTextBox.Text,
+                telephoneClientGroupBoxMaskedTextBox.Text,
+                typeMeubleClientGroupBoxComboBox.Text,
+                styleMeubleClientGroupBoxComboBox.Text,
+                manifacturierTransactionGroupBoxComboBox.Text,
+                tailleTransactionGroupBoxComboBox.Text,
+                DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
+                Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
+        }
     }
 }
