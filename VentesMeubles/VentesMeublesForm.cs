@@ -4,7 +4,7 @@ Programmeur : Brandon Pinet et Olivier Roussel
 But : Un application pour la saisie d'un transaction d'une compagnie nommé Thomas's Old Furnitures
 Solution: VentesMeubles.sln 
 Projet: VentesMeubles.csproj
-Classe : VentesMeublesForm.cs, VentesMeublesGeneraleClass.cs et TransactionClass.cs
+Classe : VentesMeublesForm.cs
 Date : Le 26-27 fevrier 2026 
  
  */
@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using Transaction;
 using Types;
 using static Types.TypesClass;
+using ct = Types.TypesClass.CodeTypes;
 using ce = VentesMeubles.VentesMeublesGeneraleClass.CodesErreurs;
 using g = VentesMeubles.VentesMeublesGeneraleClass;
 
@@ -33,7 +34,7 @@ namespace VentesMeubles
     public partial class VentesMeublesForm : Form
     {
         #region Déclaration des membres privées
-
+        
         TransactionClass oTrans;
         TypesClass oTypes;
 
@@ -65,28 +66,24 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-
                 MessageBox.Show(ex.ToString()); ;
             }
             catch (ArgumentException ex)
             {
-
                 MessageBox.Show(ex.ToString()); ;
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString()); ;
             }
-
 
             try
             {
                 oTypes = new TypesClass();
 
-                typeMeubleClientGroupBoxComboBox.Items.AddRange(oTypes.GetTypes(TypesClass.CodeTypes.Types));
+                typeMeubleClientGroupBoxComboBox.Items.AddRange(oTypes.GetTypes(ct.Types));
                 typeMeubleClientGroupBoxComboBox.SelectedIndex = 0;
-                styleMeubleClientGroupBoxComboBox.Items.AddRange(oTypes.GetTypes(TypesClass.CodeTypes.Styles));
+                styleMeubleClientGroupBoxComboBox.Items.AddRange(oTypes.GetTypes(ct.Styles));
                 styleMeubleClientGroupBoxComboBox.SelectedIndex = 0;
 
 
@@ -106,6 +103,11 @@ namespace VentesMeubles
         #endregion
 
         #region Obtenir le prix
+        /// <summary>
+        /// Méthode partagé pour mettre à jour le label du prix
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManifacturierTailleComboBox_SelectedIndexChange(object sender, EventArgs e)
         {
             try
@@ -140,20 +142,22 @@ namespace VentesMeubles
         #endregion
 
         #region Quitter
-        private void quitterButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
+        private void quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
-        private void enregistreButton_Click(object sender, EventArgs e)
-        {
+        #region Enregistrer
 
+        /// <summary>
+        /// Méthode partagé pour Enregistrer l'information de la transaction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Enregistrer_Click(object sender, EventArgs e)
+        {
             TransactionClass oTrans;
 
             oTrans = new TransactionClass();
@@ -168,7 +172,10 @@ namespace VentesMeubles
                 manifacturierTransactionGroupBoxComboBox.Text,
                 tailleTransactionGroupBoxComboBox.Text,
                 DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
-                Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
+                    Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
         }
+
+        #endregion
+
     }
 }

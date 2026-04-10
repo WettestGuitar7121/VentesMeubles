@@ -300,17 +300,39 @@ namespace Transaction
             set { dateLivraisonDateTime = value; }
         }
 
+        /// <summary>
+        /// Le Getter et Setter pour le prix
+        /// </summary>
         public decimal Prix
         {
             get { return prixDecimal; }
             set { prixDecimal = value; }
         }
         #endregion
+
         #region Enregistrer
+        /// <summary>
+        /// Méthode pour enregistrer les informations d'achat
+        /// </summary>
         public void Enregister()
         {
             Console.WriteLine(Nom+ Prenom + Adresse + CodePostal + Telephone + Type + Style + Manifacturier + Taille + DateLivraison + Prix);
         }
+
+        /// <summary>
+        /// Méthode pour enregistrer les informations d'achat avec paramètres
+        /// </summary>
+        /// <param name="nomStr"></param>
+        /// <param name="prenomStr"></param>
+        /// <param name="adresseStr"></param>
+        /// <param name="codePostal"></param>
+        /// <param name="telephoneStr"></param>
+        /// <param name="typeMeubleStr"></param>
+        /// <param name="styleMeubleStr"></param>
+        /// <param name="manifacturierStr"></param>
+        /// <param name="tailleStr"></param>
+        /// <param name="dateLivraisonDateTime"></param>
+        /// <param name="prixDecimal"></param>
         public void Enregister(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
         {
             Nom = nomStr;

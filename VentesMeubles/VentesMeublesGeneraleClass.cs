@@ -1,9 +1,9 @@
 ﻿/*
 Programmeur : Brandon Pinet et Olivier Roussel
-But : Un application pour la saisie d'un transaction d'une compagnie nommé Thomas's Old Furnitures
+But : Une couche présentation pour initialiser les messages d'erreurs générales.
 Solution: VentesMeubles.sln 
 Projet: VentesMeubles.csproj
-Classe : VentesMeublesForm.cs, VentesMeublesGeneraleClass.cs et TransactionClass.cs
+Classe : VentesMeublesGeneraleClass.cs
 Date : Le 26-27 fevrier 2026 
  */
 using System;
@@ -20,6 +20,9 @@ namespace VentesMeubles
     internal class VentesMeublesGeneraleClass
     {
         #region Énumération
+        /// <summary>
+        /// Enumération pour les messages d'erreurs
+        /// </summary>
         public enum CodesErreurs
         {
             ErreurManifacturier,
@@ -38,6 +41,9 @@ namespace VentesMeubles
 
         #region Initialisation
 
+        /// <summary>
+        /// Initialisation des messages d'erreurs
+        /// </summary>
         public static void InitMessages()
         {
             tMessages[(int)CodesErreurs.ErreurManifacturier] = "Erreur au niveau du manifacturier.";
