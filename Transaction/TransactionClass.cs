@@ -1,9 +1,10 @@
 ﻿/*
 Programmeur : Brandon Pinet et Olivier Roussel
-But : Un application pour la saisie d'un transaction d'une compagnie nommé Thomas's Old Furnitures
+But : Une couche métier que va permettre la validations des champs du formulaire,
+avoir un Getter pour recevoir le prix dans le formulaire et avoir une méthode pour enregistrer.
 Solution: VentesMeubles.sln 
-Projet: VentesMeubles.csproj
-Classe : VentesMeublesForm.cs, VentesMeublesGeneraleClass.cs et TransactionClass.cs
+Projet: Transaction.csproj
+Classe : TransactionClass.cs
 Date : Le 26-27 fevrier 2026 
  */
 using System;
@@ -50,16 +51,25 @@ namespace Transaction
 
         #region Initialisation des tableaux
 
+        /// <summary>
+        /// Initialisation du tableau de 1er dimension de Tailles.
+        /// </summary>
         private void InitTaille()
         {
             tTailles = new string[4] { "7 Pied", "5 Pied", "4 Pied", "3 Pied" };
         }
 
+        /// <summary>
+        /// Initialisation du tableau de 1er dimension de Manifacturiers.
+        /// </summary>
         private void InitManifacturier()
         {
             tManifacturiers = new string[4] { "Thomas's Homemade Furniture", "Jimmy's Antiques", "Lucas’s Fine Woodworks", "Alexis's Timeless Treasures" };
         }
 
+        /// <summary>
+        /// Initialisation du tableau de 2e dimension de Prix.
+        /// </summary>
         private void InitPrix()
         {
             tPrix = new decimal[4, 4]
@@ -73,6 +83,10 @@ namespace Transaction
         #endregion
 
         #region Constructeur
+
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public TransactionClass()
         {
             InitTaille();
@@ -80,6 +94,20 @@ namespace Transaction
             InitPrix();
         }
 
+        /// <summary>
+        /// Constructeur par paramètres
+        /// </summary>
+        /// <param name="nomStr"></param>
+        /// <param name="prenomStr"></param>
+        /// <param name="adresseStr"></param>
+        /// <param name="codePostal"></param>
+        /// <param name="telephoneStr"></param>
+        /// <param name="typeMeubleStr"></param>
+        /// <param name="styleMeubleStr"></param>
+        /// <param name="manifacturierStr"></param>
+        /// <param name="tailleStr"></param>
+        /// <param name="dateLivraisonDateTime"></param>
+        /// <param name="prixDecimal"></param>
         public TransactionClass(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
         {
             Nom = nomStr;
@@ -100,13 +128,21 @@ namespace Transaction
 
         #region Manifacturiers des meubles
 
+        /// <summary>
+        /// Getter pour le tableau des Manifacturiers
+        /// </summary>
+        /// <returns>tManifacturiers</returns>
         public string[] GetManifacturiers()
             { return tManifacturiers; }
 
         #endregion
 
         #region Tailles des meubles
-    
+
+    /// <summary>
+    /// Getter pour le tableau des Tailles
+    /// </summary>
+    /// <returns>tTailles</returns>
         public string[] GetTailles()
             { return tTailles; }
 
@@ -114,6 +150,13 @@ namespace Transaction
 
         #region Prix des meubles
 
+        /// <summary>
+        /// Getter pour le tableau des Prix qui utilise les index de manifacturier et taille pour trouver les prix
+        /// </summary>
+        /// <param name="manifacturier"></param>
+        /// <param name="taille"></param>
+        /// <returns>tPrix[manifacturier,taille]</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public decimal GetPrix(int manifacturier, int taille)
         {
             if (manifacturier >= tManifacturiers.GetLowerBound(0) && manifacturier <= tManifacturiers.GetUpperBound(0))
@@ -131,6 +174,13 @@ namespace Transaction
                     throw new ArgumentOutOfRangeException("La manifactorier n'est pas valide...");
         }
 
+        /// <summary>
+        /// Getter pour le tableau des Prix qui utilise les noms de manifacturier et taille pour trouver les prix
+        /// </summary>
+        /// <param name="manifacturier"></param>
+        /// <param name="taille"></param>
+        /// <returns>tPrix[manifacturier,taille]</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public decimal GetPrix(string manifacturier, string taille)
         {
             int manifacturierInt, tailleInt;
@@ -150,60 +200,100 @@ namespace Transaction
         
         #region Getters/Setters
 
+
+        /// <summary>
+        /// Le Getter de l'id de la transaction
+        /// </summary>
         public int Id
         {
             get {return idInt;}
         }
 
+
+        /// <summary>
+        /// Le Getter et Setter pour le nom de famille du client
+        /// </summary>
         public string Nom
         {
             get { return nomStr;}
             set { nomStr = value;}
         }
 
+        /// <summary>
+        /// Le Getter et Setter pour le nom du client
+        /// </summary>
         public string Prenom
         {
             get { return prenomStr; }
             set { prenomStr = value;}
         }
 
+        /// <summary>
+        /// Le Getter et Setter pour l'adresse du client
+        /// </summary>
         public string Adresse
         {
             get { return adresseStr; }
             set { adresseStr = value; }
         }
 
+        /// <summary>
+        /// Le Getter et Setter pour le code postal du client
+        /// </summary>
         public string CodePostal
         {
             get { return codePostalStr; }
             set { codePostalStr = value; }
         }
+
+        /// <summary>
+        /// Le Getter et Setter pour le telephone du client
+        /// </summary>
         public string Telephone
         {
             get { return telephoneStr; }
             set { telephoneStr = value; }
         }
+
+        /// <summary>
+        /// Le Getter et Setter pour le type de meuble que le client choisi
+        /// </summary>
         public string Type
         {
             get { return typeMeubleStr; }
             set { typeMeubleStr = value; }
         }
+
+        /// <summary>
+        /// Le Getter et Setter pour le style du meuble que le client choisi
+        /// </summary>
         public string Style
         {
             get { return styleMeubleStr; }
             set { styleMeubleStr = value; }
         }
+
+        /// <summary>
+        /// Le Getter et Setter pour le manifacturier du meuble choisi
+        /// </summary>
         public string Manifacturier
         {
             get { return manifacturierStr; }
             set { manifacturierStr = value; }
         }
+
+        /// <summary>
+        /// Le Getter et Setter pour la taille du meuble choisi
+        /// </summary>
         public string Taille
         {
             get { return tailleStr; }
             set { tailleStr = value; }
         }
 
+        /// <summary>
+        /// Le Getter et Setter pour la date de la livraison
+        /// </summary>
         public DateTime DateLivraison
         {
             get { return dateLivraisonDateTime; }
