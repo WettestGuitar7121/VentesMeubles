@@ -173,7 +173,12 @@ namespace VentesMeubles
                 tailleTransactionGroupBoxComboBox.Text,
                 DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
                     Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
+
+            datePaiementTotalLabel.Text = oTrans.DatePaiement.ToLongDateString();
         }
+
+
+            
 
         #endregion
 

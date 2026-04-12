@@ -218,7 +218,22 @@ namespace Transaction
         public string Nom
         {
             get { return nomStr;}
-            set { nomStr = value;}
+            set {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        nomStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.NomObligatoire]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.NomObligatoire]);           
+            }
         }
 
         /// <summary>
@@ -227,7 +242,23 @@ namespace Transaction
         public string Prenom
         {
             get { return prenomStr; }
-            set { prenomStr = value;}
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        prenomStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrenomObligatoire]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrenomObligatoire]);
+            }
         }
 
         /// <summary>
@@ -236,7 +267,23 @@ namespace Transaction
         public string Adresse
         {
             get { return adresseStr; }
-            set { adresseStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        adresseStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.AdresseObligatoire]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.AdresseObligatoire]);
+            }
         }
 
         /// <summary>
@@ -245,7 +292,23 @@ namespace Transaction
         public string CodePostal
         {
             get { return codePostalStr; }
-            set { codePostalStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        codePostalStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.CodePostalObligatoire]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.CodePostalObligatoire]);
+            }
         }
 
         /// <summary>
@@ -254,7 +317,23 @@ namespace Transaction
         public string Telephone
         {
             get { return telephoneStr; }
-            set { telephoneStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        telephoneStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TelephoneObligatoire]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TelephoneObligatoire]);
+            }
         }
 
         /// <summary>
@@ -263,7 +342,23 @@ namespace Transaction
         public string Type
         {
             get { return typeMeubleStr; }
-            set { typeMeubleStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        typeMeubleStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TypeInvalide]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TypeInvalide]);
+            }
         }
 
         /// <summary>
@@ -272,7 +367,23 @@ namespace Transaction
         public string Style
         {
             get { return styleMeubleStr; }
-            set { styleMeubleStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (value != String.Empty)
+                    {
+                        styleMeubleStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.StyleInvalide]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.StyleInvalide]);
+            }
         }
 
         /// <summary>
@@ -281,7 +392,23 @@ namespace Transaction
         public string Manifacturier
         {
             get { return manifacturierStr; }
-            set { manifacturierStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (Array.IndexOf(tManifacturiers, value) != -1)
+                    {
+                        typeMeubleStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.ManifacturierObligatoire]);
+                }
+                else
+                    throw new ArgumentNullException(tMessagesErreurs[(int)CodeErreurs.ManifacturierObligatoire]);
+            }
         }
 
         /// <summary>
@@ -290,7 +417,23 @@ namespace Transaction
         public string Taille
         {
             get { return tailleStr; }
-            set { tailleStr = value; }
+            set
+            {
+
+                if (value != null)
+                {
+                    value = value.Trim();
+
+                    if (Array.IndexOf(tTailles, value) != -1)
+                    {
+                        tailleStr = value;
+                    }
+                    else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TailleInvalide]);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TailleObligatoire]);
+            }
         }
 
         /// <summary>
@@ -299,7 +442,17 @@ namespace Transaction
         public DateTime DateLivraison
         {
             get { return dateLivraisonDateTime; }
-            set { dateLivraisonDateTime = value; }
+            set
+            {
+                if (value >= DateTime.Now.AddDays(-15) &&
+                    value <= DateTime.Now.AddDays(15))
+                {
+                    dateLivraisonDateTime = value;
+                    datePaiementDateTime = dateLivraisonDateTime.AddDays(30);
+                }
+                else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.DateLivraisonInvalide]);
+            }
         }
 
         /// <summary>
@@ -308,8 +461,34 @@ namespace Transaction
         public decimal Prix
         {
             get { return prixDecimal; }
-            set { prixDecimal = value; }
+            set {
+                if (Prix > 0)
+                {
+                    if (Manifacturier != String.Empty && Taille != String.Empty)
+                    {
+                       int indiceManifacturier = Array.IndexOf(tManifacturiers, Manifacturier);
+                       int indiceTaille = Array.IndexOf(tTailles, Taille);
+
+                        if (tPrix[indiceManifacturier, indiceTaille] != value)
+                        {
+                            prixDecimal = value;
+                        }else
+                            throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrixInvalide]);
+
+                    }else
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrixObligatoire]);
+
+                }else
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrixInvalide]);
+            }
         }
+
+        public DateTime DatePaiement
+        {
+            get { return datePaiementDateTime; }
+           
+        }
+
         #endregion
 
         #region Enregistrer
@@ -368,7 +547,12 @@ namespace Transaction
         TypeInvalide,
         StyleInvalide,
         DateLivraisonInvalide,
-        ErreurIndeterminee
+        ErreurIndeterminee,
+        ManifacturierObligatoire,
+        TailleInvalide,
+        TailleObligatoire,
+        PrixObligatoire,
+        PrixInvalide
         }
 
         private string[] tMessagesErreurs = new string[10];
@@ -386,6 +570,12 @@ namespace Transaction
             tMessagesErreurs[(int)CodeErreurs.StyleInvalide] = "Le style est invalide";
             tMessagesErreurs[(int)CodeErreurs.DateLivraisonInvalide] = "La date de livraison est invalide";
             tMessagesErreurs[(int)CodeErreurs.ErreurIndeterminee] = "Erreur Indéterminée";
+            tMessagesErreurs[(int)CodeErreurs.ManifacturierObligatoire] = "Le Manifacturier est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.TailleInvalide] = "La Taille est invalide";
+            tMessagesErreurs[(int)CodeErreurs.TailleObligatoire] = "La Taille est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.PrixObligatoire] = "Un Manifacturier et une Taille sont obligatoires";
+            tMessagesErreurs[(int)CodeErreurs.PrixInvalide] = "Le Manifacturier et la Taille sont invalides";
+
         }
 
         #endregion
