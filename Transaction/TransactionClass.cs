@@ -23,7 +23,7 @@ namespace Transaction
     /// </summary>
     public class TransactionClass
     {
-        #region Declaration des champs priver
+        #region Declaration des champs privées
 
         private int idInt;
         private string nomStr;
@@ -40,6 +40,8 @@ namespace Transaction
     
         private DateTime dateLivraisonDateTime;
         private decimal prixDecimal;
+
+        private DateTime datePaiementDateTime;
 
         #endregion
 
@@ -350,6 +352,42 @@ namespace Transaction
 
             Enregister();
         }
+        #endregion
+
+        #region Messages d'erreurs
+
+        private enum CodeErreurs 
+        {
+        NomObligatoire,
+        PrenomObligatoire,
+        AdresseObligatoire,
+        CodePostalObligatoire,
+        CodePostalInvalide,
+        TelephoneObligatoire,
+        TelephoneInvalide,
+        TypeInvalide,
+        StyleInvalide,
+        DateLivraisonInvalide,
+        ErreurIndeterminee
+        }
+
+        private string[] tMessagesErreurs = new string[10];
+
+        private void InitMessagesErreurs()
+        {
+            tMessagesErreurs[(int)CodeErreurs.NomObligatoire] = "Le nom est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.PrenomObligatoire] = "Le prénom est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.AdresseObligatoire] = "L'Adresse est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.CodePostalObligatoire] = "Le code postal est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.CodePostalInvalide] = "le code postal est invalide";
+            tMessagesErreurs[(int)CodeErreurs.TelephoneObligatoire] = "Le téléphone est obligatoire";
+            tMessagesErreurs[(int)CodeErreurs.TelephoneInvalide] = "Le téléphone est invalide";
+            tMessagesErreurs[(int)CodeErreurs.TypeInvalide] = "Le type est invalide";
+            tMessagesErreurs[(int)CodeErreurs.StyleInvalide] = "Le style est invalide";
+            tMessagesErreurs[(int)CodeErreurs.DateLivraisonInvalide] = "La date de livraison est invalide";
+            tMessagesErreurs[(int)CodeErreurs.ErreurIndeterminee] = "Erreur Indéterminée";
+        }
+
         #endregion
     }
 }
