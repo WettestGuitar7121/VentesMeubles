@@ -110,7 +110,7 @@ namespace Transaction
         /// <param name="tailleStr"></param>
         /// <param name="dateLivraisonDateTime"></param>
         /// <param name="prixDecimal"></param>
-        public TransactionClass(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal)
+        public TransactionClass(string nomStr, string prenomStr, string adresseStr, string codePostal, string telephoneStr, string typeMeubleStr, string styleMeubleStr, string manifacturierStr, string tailleStr, DateTime dateLivraisonDateTime, decimal prixDecimal) : this()
         {
             Nom = nomStr;
             Prenom = prenomStr;
@@ -399,9 +399,9 @@ namespace Transaction
                 {
                     value = value.Trim();
 
-                    if (Array.IndexOf(tManifacturiers, value) != -1)
+                    if (Array.IndexOf(tManifacturiers, value) != -1) 
                     {
-                        typeMeubleStr = value;
+                        manifacturierStr = value;
                     }
                     else
                         throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.ManifacturierObligatoire]);
@@ -462,24 +462,29 @@ namespace Transaction
         {
             get { return prixDecimal; }
             set {
-                if (Prix > 0)
+                if (value > 0.0M)
                 {
-                    if (Manifacturier != String.Empty && Taille != String.Empty)
+                    if (this.Manifacturier != string.Empty && this.Taille != string.Empty)
                     {
-                       int indiceManifacturier = Array.IndexOf(tManifacturiers, Manifacturier);
-                       int indiceTaille = Array.IndexOf(tTailles, Taille);
+                                                                
+                       int indiceManifacturier = Array.IndexOf(tManifacturiers, this.Manifacturier);
+                       int indiceTaille = Array.IndexOf(tTailles, this.Taille);
+                        Console.WriteLine(indiceManifacturier + Environment.NewLine + indiceTaille);
 
-                        if (tPrix[indiceManifacturier, indiceTaille] != value)
+                        if (tPrix[indiceManifacturier, indiceTaille] == value)
                         {
                             prixDecimal = value;
-                        }else
+                        }
+                        else
                             throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrixInvalide]);
 
-                    }else
-                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrixObligatoire]);
+                    }
+                    else
+                        throw new ArgumentNullException(tMessagesErreurs[(int)CodeErreurs.PrixObligatoire]);
 
-                }else
-                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.PrixInvalide]);
+                }
+                else
+                    throw new ArgumentOutOfRangeException(tMessagesErreurs[(int)CodeErreurs.PrixInvalide]);
             }
         }
 

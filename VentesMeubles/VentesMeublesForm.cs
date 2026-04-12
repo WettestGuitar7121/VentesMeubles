@@ -158,23 +158,24 @@ namespace VentesMeubles
         /// <param name="e"></param>
         private void Enregistrer_Click(object sender, EventArgs e)
         {
-            TransactionClass oTrans;
+                TransactionClass oTrans;
 
-            oTrans = new TransactionClass();
+                oTrans = new TransactionClass();
 
-            oTrans.Enregister(nomClientGroupBoxMaskedTextBox.Text,
-                prenomClientGroupBoxMaskedTextBox.Text,
-                adresseClientGroupBoxMaskedTextBox.Text,
-                codePostalClientGroupBoxMaskedTextBox.Text,
-                telephoneClientGroupBoxMaskedTextBox.Text,
-                typeMeubleClientGroupBoxComboBox.Text,
-                styleMeubleClientGroupBoxComboBox.Text,
-                manifacturierTransactionGroupBoxComboBox.Text,
-                tailleTransactionGroupBoxComboBox.Text,
-                DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
-                    Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
+                oTrans.Enregister(nomClientGroupBoxMaskedTextBox.Text,
+                    prenomClientGroupBoxMaskedTextBox.Text,
+                    adresseClientGroupBoxMaskedTextBox.Text,
+                    codePostalClientGroupBoxMaskedTextBox.Text,
+                    telephoneClientGroupBoxMaskedTextBox.Text,
+                    typeMeubleClientGroupBoxComboBox.Text,
+                    styleMeubleClientGroupBoxComboBox.Text,
+                    manifacturierTransactionGroupBoxComboBox.Text,
+                    tailleTransactionGroupBoxComboBox.Text,
+                    DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
+                        Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
 
-            datePaiementTotalLabel.Text = oTrans.DatePaiement.ToLongDateString();
+                datePaiementTotalLabel.Text = oTrans.DatePaiement.ToLongDateString();
+           
         }
 
 
