@@ -158,6 +158,9 @@ namespace VentesMeubles
         /// <param name="e"></param>
         private void Enregistrer_Click(object sender, EventArgs e)
         {
+               
+            try
+            {
                 TransactionClass oTrans;
 
                 oTrans = new TransactionClass();
@@ -172,16 +175,41 @@ namespace VentesMeubles
                     manifacturierTransactionGroupBoxComboBox.Text,
                     tailleTransactionGroupBoxComboBox.Text,
                     DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
-                        Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
+                    Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
 
                 datePaiementTotalLabel.Text = oTrans.DatePaiement.ToLongDateString();
-           
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.ToString()); ;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); ;
+            }
+
         }
 
 
-            
+
 
         #endregion
 
+        private void dateLivraisonTransactionGroupBoxDateTimePicker_Validating(object sender, CancelEventArgs e)
+        {
+            DateTime value;
+
+            if (DateTime.TryParse(dateLivraisonTransactionGroupBoxDateTimePicker.Text, out value))
+            {
+                dateLivraisonTransactionGroupBoxDateTimePicker.Text = value.ToLongDateString();
+            } else
+            { 
+                dateLivraisonTransactionGroupBoxDateTimePicker.Text = DateTime.Now.ToLongDateString();
+            }
+        }
     }
 }

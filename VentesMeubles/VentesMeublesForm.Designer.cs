@@ -45,6 +45,8 @@
             this.prenomClientGroupBoxLabel = new System.Windows.Forms.Label();
             this.nomClientGroupBoxLabel = new System.Windows.Forms.Label();
             this.transactionGroupBox = new System.Windows.Forms.GroupBox();
+            this.datePaiementTotalLabel = new System.Windows.Forms.Label();
+            this.datePaiementLabel = new System.Windows.Forms.Label();
             this.prixMeubleTransactionGroupBoxLabel = new System.Windows.Forms.Label();
             this.tailleTransactionGroupBoxComboBox = new System.Windows.Forms.ComboBox();
             this.manifacturierTransactionGroupBoxComboBox = new System.Windows.Forms.ComboBox();
@@ -65,8 +67,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compagnieBackgroundLabel = new System.Windows.Forms.Label();
             this.nomCompagnieLabel = new System.Windows.Forms.Label();
-            this.datePaiementLabel = new System.Windows.Forms.Label();
-            this.datePaiementTotalLabel = new System.Windows.Forms.Label();
             this.clientGroupBox.SuspendLayout();
             this.transactionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -242,6 +242,25 @@
             this.transactionGroupBox.TabStop = false;
             this.transactionGroupBox.Text = "Transaction:";
             // 
+            // datePaiementTotalLabel
+            // 
+            this.datePaiementTotalLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.datePaiementTotalLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.datePaiementTotalLabel.Location = new System.Drawing.Point(144, 229);
+            this.datePaiementTotalLabel.Name = "datePaiementTotalLabel";
+            this.datePaiementTotalLabel.Size = new System.Drawing.Size(203, 23);
+            this.datePaiementTotalLabel.TabIndex = 10;
+            this.datePaiementTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // datePaiementLabel
+            // 
+            this.datePaiementLabel.AutoSize = true;
+            this.datePaiementLabel.Location = new System.Drawing.Point(19, 231);
+            this.datePaiementLabel.Name = "datePaiementLabel";
+            this.datePaiementLabel.Size = new System.Drawing.Size(117, 16);
+            this.datePaiementLabel.TabIndex = 15;
+            this.datePaiementLabel.Text = "Date de paiement:";
+            // 
             // prixMeubleTransactionGroupBoxLabel
             // 
             this.prixMeubleTransactionGroupBoxLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -279,6 +298,7 @@
             this.dateLivraisonTransactionGroupBoxDateTimePicker.Name = "dateLivraisonTransactionGroupBoxDateTimePicker";
             this.dateLivraisonTransactionGroupBoxDateTimePicker.Size = new System.Drawing.Size(257, 22);
             this.dateLivraisonTransactionGroupBoxDateTimePicker.TabIndex = 11;
+            this.dateLivraisonTransactionGroupBoxDateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.dateLivraisonTransactionGroupBoxDateTimePicker_Validating);
             // 
             // prixTransactionGroupBoxLabel
             // 
@@ -426,25 +446,6 @@
             this.nomCompagnieLabel.Size = new System.Drawing.Size(451, 50);
             this.nomCompagnieLabel.TabIndex = 9;
             this.nomCompagnieLabel.Text = "Thomas\'s Old Furnitures";
-            // 
-            // datePaiementLabel
-            // 
-            this.datePaiementLabel.AutoSize = true;
-            this.datePaiementLabel.Location = new System.Drawing.Point(19, 231);
-            this.datePaiementLabel.Name = "datePaiementLabel";
-            this.datePaiementLabel.Size = new System.Drawing.Size(117, 16);
-            this.datePaiementLabel.TabIndex = 15;
-            this.datePaiementLabel.Text = "Date de paiement:";
-            // 
-            // datePaiementTotalLabel
-            // 
-            this.datePaiementTotalLabel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.datePaiementTotalLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.datePaiementTotalLabel.Location = new System.Drawing.Point(144, 229);
-            this.datePaiementTotalLabel.Name = "datePaiementTotalLabel";
-            this.datePaiementTotalLabel.Size = new System.Drawing.Size(203, 23);
-            this.datePaiementTotalLabel.TabIndex = 10;
-            this.datePaiementTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VentesMeublesForm
             // 
