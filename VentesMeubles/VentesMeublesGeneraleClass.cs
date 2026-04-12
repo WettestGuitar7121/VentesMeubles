@@ -25,16 +25,14 @@ namespace VentesMeubles
         /// </summary>
         public enum CodesErreurs
         {
-            ErreurManifacturier,
-            ErreurTaille,
-            ErreurPrix,
+            ErreurTableau,
             ErreurIndeterminee
         }
         #endregion
 
         #region Déclaration
 
-        public static string[] tMessages = new string[4];
+        public static string[] tMessages = new string[2];
 
 
         #endregion
@@ -46,9 +44,7 @@ namespace VentesMeubles
         /// </summary>
         public static void InitMessages()
         {
-            tMessages[(int)CodesErreurs.ErreurManifacturier] = "Erreur au niveau du manifacturier.";
-            tMessages[(int)CodesErreurs.ErreurTaille] = "Erreur au niveau de la taille.";
-            tMessages[(int)CodesErreurs.ErreurPrix] = "Erreur au niveau du prix.";
+            tMessages[(int)CodesErreurs.ErreurTableau] = "Erreur au niveau des  tableaux.";
             tMessages[(int)CodesErreurs.ErreurIndeterminee] = "Erreur indéterminée. Veuillez joindre la personne ressource.";
         }
 

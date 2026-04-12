@@ -105,6 +105,7 @@
             this.adresseClientGroupBoxMaskedTextBox.Name = "adresseClientGroupBoxMaskedTextBox";
             this.adresseClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
             this.adresseClientGroupBoxMaskedTextBox.TabIndex = 16;
+            this.adresseClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // prenomClientGroupBoxMaskedTextBox
             // 
@@ -113,14 +114,17 @@
             this.prenomClientGroupBoxMaskedTextBox.Name = "prenomClientGroupBoxMaskedTextBox";
             this.prenomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
             this.prenomClientGroupBoxMaskedTextBox.TabIndex = 15;
+            this.prenomClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // nomClientGroupBoxMaskedTextBox
             // 
+            this.nomClientGroupBoxMaskedTextBox.AllowPromptAsInput = false;
             this.nomClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 38);
             this.nomClientGroupBoxMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nomClientGroupBoxMaskedTextBox.Name = "nomClientGroupBoxMaskedTextBox";
             this.nomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
             this.nomClientGroupBoxMaskedTextBox.TabIndex = 14;
+            this.nomClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // styleMeubleClientGroupBoxComboBox
             // 
@@ -148,6 +152,7 @@
             this.telephoneClientGroupBoxMaskedTextBox.Name = "telephoneClientGroupBoxMaskedTextBox";
             this.telephoneClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
             this.telephoneClientGroupBoxMaskedTextBox.TabIndex = 11;
+            this.telephoneClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // codePostalClientGroupBoxMaskedTextBox
             // 
@@ -157,6 +162,7 @@
             this.codePostalClientGroupBoxMaskedTextBox.Name = "codePostalClientGroupBoxMaskedTextBox";
             this.codePostalClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
             this.codePostalClientGroupBoxMaskedTextBox.TabIndex = 10;
+            this.codePostalClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // styleMeubleClientGroupBoxLabel
             // 
@@ -378,7 +384,7 @@
             this.VentesMeublesMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.VentesMeublesMenuStrip.Name = "VentesMeublesMenuStrip";
             this.VentesMeublesMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.VentesMeublesMenuStrip.Size = new System.Drawing.Size(1179, 28);
+            this.VentesMeublesMenuStrip.Size = new System.Drawing.Size(1179, 30);
             this.VentesMeublesMenuStrip.TabIndex = 7;
             this.VentesMeublesMenuStrip.Text = "VentesMeublesMenuStrip";
             // 

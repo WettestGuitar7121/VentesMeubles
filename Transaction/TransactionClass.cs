@@ -94,6 +94,7 @@ namespace Transaction
             InitTaille();
             InitManifacturier();
             InitPrix();
+            InitMessagesErreurs();
         }
 
         /// <summary>
@@ -560,7 +561,7 @@ namespace Transaction
         PrixInvalide
         }
 
-        private string[] tMessagesErreurs = new string[10];
+        private string[] tMessagesErreurs = new string[16];
 
         private void InitMessagesErreurs()
         {

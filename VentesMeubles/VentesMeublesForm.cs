@@ -66,15 +66,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]); 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
 
             try
@@ -90,13 +90,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
 
         }
@@ -117,18 +119,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
             }
             catch (ArgumentException ex)
             {
-
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
         }
         #endregion
@@ -181,15 +180,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString()); ;
+                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
 
         }
@@ -199,6 +198,7 @@ namespace VentesMeubles
 
         #endregion
 
+        #region Validating DateLivraion
         private void dateLivraisonTransactionGroupBoxDateTimePicker_Validating(object sender, CancelEventArgs e)
         {
             DateTime value;
@@ -206,10 +206,26 @@ namespace VentesMeubles
             if (DateTime.TryParse(dateLivraisonTransactionGroupBoxDateTimePicker.Text, out value))
             {
                 dateLivraisonTransactionGroupBoxDateTimePicker.Text = value.ToLongDateString();
-            } else
-            { 
+            }
+            else
+            {
                 dateLivraisonTransactionGroupBoxDateTimePicker.Text = DateTime.Now.ToLongDateString();
             }
         }
+        #endregion
+
+        #region MaskedBoxEnter
+
+        //CHECKER SA VU QUE PAS VU EN CLASSE
+        private void MaskedTextBox_Enter(object sender, EventArgs e)
+        {
+            if (sender is MaskedTextBox mtb)
+            {
+                this.BeginInvoke((MethodInvoker)(() => mtb.SelectAll()));
+            }
+
+        }
+        #endregion
+
     }
 }
