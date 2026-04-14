@@ -57,20 +57,22 @@
             this.dateLivraisonTransactionGroupBoxLabel = new System.Windows.Forms.Label();
             this.enregistreButton = new System.Windows.Forms.Button();
             this.quitterButton = new System.Windows.Forms.Button();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.VentesMeublesMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compagnieBackgroundLabel = new System.Windows.Forms.Label();
             this.nomCompagnieLabel = new System.Windows.Forms.Label();
+            this.chaisePictureBox = new System.Windows.Forms.PictureBox();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tablePictureBox = new System.Windows.Forms.PictureBox();
             this.clientGroupBox.SuspendLayout();
             this.transactionGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.VentesMeublesMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chaisePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // clientGroupBox
@@ -104,7 +106,7 @@
             this.adresseClientGroupBoxMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adresseClientGroupBoxMaskedTextBox.Name = "adresseClientGroupBoxMaskedTextBox";
             this.adresseClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
-            this.adresseClientGroupBoxMaskedTextBox.TabIndex = 16;
+            this.adresseClientGroupBoxMaskedTextBox.TabIndex = 2;
             this.adresseClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // prenomClientGroupBoxMaskedTextBox
@@ -113,7 +115,7 @@
             this.prenomClientGroupBoxMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.prenomClientGroupBoxMaskedTextBox.Name = "prenomClientGroupBoxMaskedTextBox";
             this.prenomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
-            this.prenomClientGroupBoxMaskedTextBox.TabIndex = 15;
+            this.prenomClientGroupBoxMaskedTextBox.TabIndex = 1;
             this.prenomClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // nomClientGroupBoxMaskedTextBox
@@ -123,7 +125,7 @@
             this.nomClientGroupBoxMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nomClientGroupBoxMaskedTextBox.Name = "nomClientGroupBoxMaskedTextBox";
             this.nomClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
-            this.nomClientGroupBoxMaskedTextBox.TabIndex = 14;
+            this.nomClientGroupBoxMaskedTextBox.TabIndex = 0;
             this.nomClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // styleMeubleClientGroupBoxComboBox
@@ -133,7 +135,7 @@
             this.styleMeubleClientGroupBoxComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.styleMeubleClientGroupBoxComboBox.Name = "styleMeubleClientGroupBoxComboBox";
             this.styleMeubleClientGroupBoxComboBox.Size = new System.Drawing.Size(167, 24);
-            this.styleMeubleClientGroupBoxComboBox.TabIndex = 13;
+            this.styleMeubleClientGroupBoxComboBox.TabIndex = 6;
             // 
             // typeMeubleClientGroupBoxComboBox
             // 
@@ -142,7 +144,7 @@
             this.typeMeubleClientGroupBoxComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.typeMeubleClientGroupBoxComboBox.Name = "typeMeubleClientGroupBoxComboBox";
             this.typeMeubleClientGroupBoxComboBox.Size = new System.Drawing.Size(167, 24);
-            this.typeMeubleClientGroupBoxComboBox.TabIndex = 12;
+            this.typeMeubleClientGroupBoxComboBox.TabIndex = 5;
             // 
             // telephoneClientGroupBoxMaskedTextBox
             // 
@@ -151,17 +153,17 @@
             this.telephoneClientGroupBoxMaskedTextBox.Mask = "(999) 000-0000";
             this.telephoneClientGroupBoxMaskedTextBox.Name = "telephoneClientGroupBoxMaskedTextBox";
             this.telephoneClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
-            this.telephoneClientGroupBoxMaskedTextBox.TabIndex = 11;
+            this.telephoneClientGroupBoxMaskedTextBox.TabIndex = 4;
             this.telephoneClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // codePostalClientGroupBoxMaskedTextBox
             // 
             this.codePostalClientGroupBoxMaskedTextBox.Location = new System.Drawing.Point(165, 145);
             this.codePostalClientGroupBoxMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.codePostalClientGroupBoxMaskedTextBox.Mask = "A9A9A9";
+            this.codePostalClientGroupBoxMaskedTextBox.Mask = "L0L0L0";
             this.codePostalClientGroupBoxMaskedTextBox.Name = "codePostalClientGroupBoxMaskedTextBox";
             this.codePostalClientGroupBoxMaskedTextBox.Size = new System.Drawing.Size(167, 22);
-            this.codePostalClientGroupBoxMaskedTextBox.TabIndex = 10;
+            this.codePostalClientGroupBoxMaskedTextBox.TabIndex = 3;
             this.codePostalClientGroupBoxMaskedTextBox.Enter += new System.EventHandler(this.MaskedTextBox_Enter);
             // 
             // styleMeubleClientGroupBoxLabel
@@ -284,7 +286,7 @@
             this.tailleTransactionGroupBoxComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tailleTransactionGroupBoxComboBox.Name = "tailleTransactionGroupBoxComboBox";
             this.tailleTransactionGroupBoxComboBox.Size = new System.Drawing.Size(257, 24);
-            this.tailleTransactionGroupBoxComboBox.TabIndex = 13;
+            this.tailleTransactionGroupBoxComboBox.TabIndex = 9;
             this.tailleTransactionGroupBoxComboBox.SelectedIndexChanged += new System.EventHandler(this.ManifacturierTailleComboBox_SelectedIndexChange);
             // 
             // manifacturierTransactionGroupBoxComboBox
@@ -294,7 +296,7 @@
             this.manifacturierTransactionGroupBoxComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manifacturierTransactionGroupBoxComboBox.Name = "manifacturierTransactionGroupBoxComboBox";
             this.manifacturierTransactionGroupBoxComboBox.Size = new System.Drawing.Size(257, 24);
-            this.manifacturierTransactionGroupBoxComboBox.TabIndex = 12;
+            this.manifacturierTransactionGroupBoxComboBox.TabIndex = 8;
             this.manifacturierTransactionGroupBoxComboBox.SelectedIndexChanged += new System.EventHandler(this.ManifacturierTailleComboBox_SelectedIndexChange);
             // 
             // dateLivraisonTransactionGroupBoxDateTimePicker
@@ -303,7 +305,7 @@
             this.dateLivraisonTransactionGroupBoxDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateLivraisonTransactionGroupBoxDateTimePicker.Name = "dateLivraisonTransactionGroupBoxDateTimePicker";
             this.dateLivraisonTransactionGroupBoxDateTimePicker.Size = new System.Drawing.Size(257, 22);
-            this.dateLivraisonTransactionGroupBoxDateTimePicker.TabIndex = 11;
+            this.dateLivraisonTransactionGroupBoxDateTimePicker.TabIndex = 7;
             this.dateLivraisonTransactionGroupBoxDateTimePicker.Validating += new System.ComponentModel.CancelEventHandler(this.dateLivraisonTransactionGroupBoxDateTimePicker_Validating);
             // 
             // prixTransactionGroupBoxLabel
@@ -349,7 +351,7 @@
             this.enregistreButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.enregistreButton.Name = "enregistreButton";
             this.enregistreButton.Size = new System.Drawing.Size(203, 103);
-            this.enregistreButton.TabIndex = 0;
+            this.enregistreButton.TabIndex = 10;
             this.enregistreButton.Text = "Enregistrer";
             this.enregistreButton.UseVisualStyleBackColor = false;
             this.enregistreButton.Click += new System.EventHandler(this.Enregistrer_Click);
@@ -361,19 +363,10 @@
             this.quitterButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.quitterButton.Name = "quitterButton";
             this.quitterButton.Size = new System.Drawing.Size(203, 103);
-            this.quitterButton.TabIndex = 5;
+            this.quitterButton.TabIndex = 11;
             this.quitterButton.Text = "Quitter";
             this.quitterButton.UseVisualStyleBackColor = false;
             this.quitterButton.Click += new System.EventHandler(this.quitter_Click);
-            // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.Location = new System.Drawing.Point(332, 118);
-            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(445, 128);
-            this.logoPictureBox.TabIndex = 6;
-            this.logoPictureBox.TabStop = false;
             // 
             // VentesMeublesMenuStrip
             // 
@@ -384,7 +377,7 @@
             this.VentesMeublesMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.VentesMeublesMenuStrip.Name = "VentesMeublesMenuStrip";
             this.VentesMeublesMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.VentesMeublesMenuStrip.Size = new System.Drawing.Size(1179, 30);
+            this.VentesMeublesMenuStrip.Size = new System.Drawing.Size(1179, 28);
             this.VentesMeublesMenuStrip.TabIndex = 7;
             this.VentesMeublesMenuStrip.Text = "VentesMeublesMenuStrip";
             // 
@@ -402,16 +395,6 @@
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(170, 6);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.Enregistrer_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -437,7 +420,7 @@
             // 
             // compagnieBackgroundLabel
             // 
-            this.compagnieBackgroundLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.compagnieBackgroundLabel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.compagnieBackgroundLabel.Location = new System.Drawing.Point(88, 43);
             this.compagnieBackgroundLabel.Name = "compagnieBackgroundLabel";
             this.compagnieBackgroundLabel.Size = new System.Drawing.Size(1031, 213);
@@ -445,21 +428,57 @@
             // 
             // nomCompagnieLabel
             // 
-            this.nomCompagnieLabel.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.nomCompagnieLabel.Font = new System.Drawing.Font("Jokerman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomCompagnieLabel.Location = new System.Drawing.Point(357, 64);
+            this.nomCompagnieLabel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.nomCompagnieLabel.Font = new System.Drawing.Font("Jokerman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomCompagnieLabel.Location = new System.Drawing.Point(327, 43);
             this.nomCompagnieLabel.Name = "nomCompagnieLabel";
-            this.nomCompagnieLabel.Size = new System.Drawing.Size(451, 50);
+            this.nomCompagnieLabel.Size = new System.Drawing.Size(513, 192);
             this.nomCompagnieLabel.TabIndex = 9;
             this.nomCompagnieLabel.Text = "Thomas\'s Old Furnitures";
+            this.nomCompagnieLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chaisePictureBox
+            // 
+            this.chaisePictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.chaisePictureBox.Image = global::VentesMeubles.Properties.Resources.DSC_2454c;
+            this.chaisePictureBox.Location = new System.Drawing.Point(132, 64);
+            this.chaisePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chaisePictureBox.Name = "chaisePictureBox";
+            this.chaisePictureBox.Size = new System.Drawing.Size(210, 176);
+            this.chaisePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chaisePictureBox.TabIndex = 6;
+            this.chaisePictureBox.TabStop = false;
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.Enregistrer_Click);
+            // 
+            // tablePictureBox
+            // 
+            this.tablePictureBox.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tablePictureBox.Image = global::VentesMeubles.Properties.Resources.davdwek_38e25a2a_9e68_45ce_98c7_aef34a12e046;
+            this.tablePictureBox.Location = new System.Drawing.Point(806, 64);
+            this.tablePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tablePictureBox.Name = "tablePictureBox";
+            this.tablePictureBox.Size = new System.Drawing.Size(276, 176);
+            this.tablePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tablePictureBox.TabIndex = 12;
+            this.tablePictureBox.TabStop = false;
             // 
             // VentesMeublesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1179, 633);
+            this.Controls.Add(this.tablePictureBox);
             this.Controls.Add(this.nomCompagnieLabel);
-            this.Controls.Add(this.logoPictureBox);
+            this.Controls.Add(this.chaisePictureBox);
             this.Controls.Add(this.compagnieBackgroundLabel);
             this.Controls.Add(this.quitterButton);
             this.Controls.Add(this.enregistreButton);
@@ -476,9 +495,10 @@
             this.clientGroupBox.PerformLayout();
             this.transactionGroupBox.ResumeLayout(false);
             this.transactionGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.VentesMeublesMenuStrip.ResumeLayout(false);
             this.VentesMeublesMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chaisePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,7 +531,7 @@
         private System.Windows.Forms.MaskedTextBox nomClientGroupBoxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox adresseClientGroupBoxMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox prenomClientGroupBoxMaskedTextBox;
-        private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.PictureBox chaisePictureBox;
         private System.Windows.Forms.MenuStrip VentesMeublesMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
@@ -523,6 +543,7 @@
         private System.Windows.Forms.Label nomCompagnieLabel;
         private System.Windows.Forms.Label datePaiementTotalLabel;
         private System.Windows.Forms.Label datePaiementLabel;
+        private System.Windows.Forms.PictureBox tablePictureBox;
     }
 }
 

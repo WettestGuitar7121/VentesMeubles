@@ -72,6 +72,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VentesMeublesAboutBox.resx">
       <DependentUpon>VentesMeublesAboutBox.cs</DependentUpon>
@@ -98,6 +99,12 @@
       <Project>{b081386d-7112-46fe-a9c9-4b0df106e149}</Project>
       <Name>Types</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DSC_2454c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\davdwek-38e25a2a-9e68-45ce-98c7-aef34a12e046.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
