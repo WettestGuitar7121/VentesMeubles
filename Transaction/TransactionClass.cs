@@ -1,17 +1,20 @@
 ﻿/*
+ * 
 Programmeur : Brandon Pinet et Olivier Roussel
 But : Une couche métier que va permettre la validations des champs du formulaire,
 avoir un Getter pour recevoir le prix dans le formulaire et avoir une méthode pour enregistrer.
 Solution: VentesMeubles.sln 
 Projet: Transaction.csproj
 Classe : TransactionClass.cs
-Date : Le 26-27 fevrier 2026 
+Date : Le 14 Avril 2026 
+
  */
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -25,7 +28,7 @@ namespace Transaction
     {
         #region Declaration des champs privées
 
-        private int idInt;
+        private static int idInt;
         private string nomStr;
 
         private string prenomStr;
@@ -42,6 +45,11 @@ namespace Transaction
         private decimal prixDecimal;
 
         private DateTime datePaiementDateTime;
+
+        //REGEX
+        private const string TELEPHONE_CANADIEN_PATTERN_Str = "^[01]?[- .]?(\\([0-9]\\d{2}\\)|[0-9]\\d{2})[- .]?\\d{3}[- .]?\\d{4}$";
+        private const string CODEPOSTAL_CANADIEN_PATTERN_Str = "^(?=[^DdFfIiOoQqUu\\d\\s])[A-Za-z]\\d(?=[^DdFfIiOoQqUu\\d\\s])[A-Za-z]\\s{0,1}\\d(?=[^DdFfIiOoQqUu\\d\\s])[A-Za-z]\\d$";
+
 
         #endregion
 
@@ -300,12 +308,12 @@ namespace Transaction
                 {
                     value = value.Trim();
 
-                    if (value != String.Empty)
+                    if (Regex.IsMatch(value, CODEPOSTAL_CANADIEN_PATTERN_Str))
                     {
                         codePostalStr = value;
                     }
                     else
-                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.CodePostalObligatoire]);
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.CodePostalInvalide]);
                 }
                 else
                     throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.CodePostalObligatoire]);
@@ -325,12 +333,12 @@ namespace Transaction
                 {
                     value = value.Trim();
 
-                    if (value != String.Empty)
+                    if (Regex.IsMatch(value, TELEPHONE_CANADIEN_PATTERN_Str))
                     {
                         telephoneStr = value;
                     }
                     else
-                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TelephoneObligatoire]);
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TelephoneInvalide]);
                 }
                 else
                     throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TelephoneObligatoire]);
@@ -355,10 +363,10 @@ namespace Transaction
                         typeMeubleStr = value;
                     }
                     else
-                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TypeInvalide]);
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TypeObligatoire]);
                 }
                 else
-                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TypeInvalide]);
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TypeObligatoire]);
             }
         }
 
@@ -380,10 +388,10 @@ namespace Transaction
                         styleMeubleStr = value;
                     }
                     else
-                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.StyleInvalide]);
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.StyleObligatoire]);
                 }
                 else
-                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.StyleInvalide]);
+                    throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.StyleObligatoire]);
             }
         }
 
@@ -430,7 +438,7 @@ namespace Transaction
                         tailleStr = value;
                     }
                     else
-                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TailleInvalide]);
+                        throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TailleObligatoire]);
                 }
                 else
                     throw new ArgumentException(tMessagesErreurs[(int)CodeErreurs.TailleObligatoire]);
@@ -489,6 +497,9 @@ namespace Transaction
             }
         }
 
+        /// <summary>
+        /// Le getter pour la date de paiement
+        /// </summary>
         public DateTime DatePaiement
         {
             get { return datePaiementDateTime; }
@@ -503,7 +514,22 @@ namespace Transaction
         /// </summary>
         public void Enregister()
         {
-            Console.WriteLine(Nom+ Prenom + Adresse + CodePostal + Telephone + Type + Style + Manifacturier + Taille + DateLivraison + Prix);
+            idInt += 1;
+
+            Console.WriteLine("Information reçue" + Environment.NewLine +
+                             "Numéro de transaction = " + Id + Environment.NewLine +
+                             "Prénom = " + Prenom + Environment.NewLine +
+                             "Nom = " + Nom + Environment.NewLine +
+                             "Adresse = " + Adresse + Environment.NewLine +
+                             "Code postal = " + CodePostal + Environment.NewLine +
+                             "Téléphone = " + Telephone + Environment.NewLine +
+                             "Type = " + Type + Environment.NewLine +
+                             "Style = " + Style + Environment.NewLine +
+                             "Manifacturier = " + Manifacturier + Environment.NewLine +
+                             "Taille = " + Taille + Environment.NewLine +
+                             "Date livraison = " + DateLivraison.ToLongDateString() + Environment.NewLine +
+                             "Date paiement = " + DatePaiement.ToLongDateString() + Environment.NewLine +
+                             "Prix = " + Prix.ToString("C2"));
         }
 
         /// <summary>
@@ -541,6 +567,9 @@ namespace Transaction
 
         #region Messages d'erreurs
 
+        /// <summary>
+        /// Enumération pour les messages d'erreurs de la couche métier
+        /// </summary>
         private enum CodeErreurs 
         {
         NomObligatoire,
@@ -550,34 +579,36 @@ namespace Transaction
         CodePostalInvalide,
         TelephoneObligatoire,
         TelephoneInvalide,
-        TypeInvalide,
-        StyleInvalide,
+        TypeObligatoire,
+        StyleObligatoire,
         DateLivraisonInvalide,
         ErreurIndeterminee,
         ManifacturierObligatoire,
-        TailleInvalide,
         TailleObligatoire,
         PrixObligatoire,
         PrixInvalide
         }
 
-        private string[] tMessagesErreurs = new string[16];
+        private string[] tMessagesErreurs = new string[15];
 
+
+        /// <summary>
+        /// Initialisation des messages d'erreurs de la couche métier
+        /// </summary>
         private void InitMessagesErreurs()
         {
             tMessagesErreurs[(int)CodeErreurs.NomObligatoire] = "Le nom est obligatoire";
             tMessagesErreurs[(int)CodeErreurs.PrenomObligatoire] = "Le prénom est obligatoire";
             tMessagesErreurs[(int)CodeErreurs.AdresseObligatoire] = "L'Adresse est obligatoire";
             tMessagesErreurs[(int)CodeErreurs.CodePostalObligatoire] = "Le code postal est obligatoire";
-            tMessagesErreurs[(int)CodeErreurs.CodePostalInvalide] = "le code postal est invalide";
+            tMessagesErreurs[(int)CodeErreurs.CodePostalInvalide] = "Le code postal est invalide";
             tMessagesErreurs[(int)CodeErreurs.TelephoneObligatoire] = "Le téléphone est obligatoire";
             tMessagesErreurs[(int)CodeErreurs.TelephoneInvalide] = "Le téléphone est invalide";
-            tMessagesErreurs[(int)CodeErreurs.TypeInvalide] = "Le type est invalide";
-            tMessagesErreurs[(int)CodeErreurs.StyleInvalide] = "Le style est invalide";
+            tMessagesErreurs[(int)CodeErreurs.TypeObligatoire] = "Le type est invalide";
+            tMessagesErreurs[(int)CodeErreurs.StyleObligatoire] = "Le style est invalide";
             tMessagesErreurs[(int)CodeErreurs.DateLivraisonInvalide] = "La date de livraison est invalide";
             tMessagesErreurs[(int)CodeErreurs.ErreurIndeterminee] = "Erreur Indéterminée";
             tMessagesErreurs[(int)CodeErreurs.ManifacturierObligatoire] = "Le Manifacturier est obligatoire";
-            tMessagesErreurs[(int)CodeErreurs.TailleInvalide] = "La Taille est invalide";
             tMessagesErreurs[(int)CodeErreurs.TailleObligatoire] = "La Taille est obligatoire";
             tMessagesErreurs[(int)CodeErreurs.PrixObligatoire] = "Un Manifacturier et une Taille sont obligatoires";
             tMessagesErreurs[(int)CodeErreurs.PrixInvalide] = "Le Manifacturier et la Taille sont invalides";

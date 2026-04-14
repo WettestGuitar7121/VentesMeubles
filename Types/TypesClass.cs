@@ -4,7 +4,7 @@ But : Une couche métier que va permet d'initialiser les tableaux de Types et St
 Solution: VentesMeubles.sln 
 Projet: Types.csproj
 Classe : TypesClass.cs
-Date : Le 26-27 fevrier 2026 
+Date : Le 14 Avril 2026 
  */
 using System;
 using System.Collections.Generic;

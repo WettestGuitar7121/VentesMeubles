@@ -4,7 +4,7 @@ But : Une couche présentation pour initialiser les messages d'erreurs général
 Solution: VentesMeubles.sln 
 Projet: VentesMeubles.csproj
 Classe : VentesMeublesGeneraleClass.cs
-Date : Le 26-27 fevrier 2026 
+Date : Le 14 Avril 2026  
  */
 using System;
 using System.Collections.Generic;
@@ -25,14 +25,13 @@ namespace VentesMeubles
         /// </summary>
         public enum CodesErreurs
         {
-            ErreurTableau,
             ErreurIndeterminee
         }
         #endregion
 
         #region Déclaration
 
-        public static string[] tMessages = new string[2];
+        public static string[] tMessages = new string[1];
 
 
         #endregion
@@ -44,7 +43,6 @@ namespace VentesMeubles
         /// </summary>
         public static void InitMessages()
         {
-            tMessages[(int)CodesErreurs.ErreurTableau] = "Erreur au niveau des  tableaux.";
             tMessages[(int)CodesErreurs.ErreurIndeterminee] = "Erreur indéterminée. Veuillez joindre la personne ressource.";
         }
 

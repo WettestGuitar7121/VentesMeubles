@@ -1,9 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Types.TypesClass" Collapsed="true">
+  <Class Name="Types.TypesClass">
     <Position X="0.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Types.TypesClass.CodeTypes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TypesClass.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAEAIAABAAAAAACA=</HashCode>
       <FileName>TypesClass.cs</FileName>
     </TypeIdentifier>
   </Class>

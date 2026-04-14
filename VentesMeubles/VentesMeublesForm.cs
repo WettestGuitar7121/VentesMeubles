@@ -5,7 +5,7 @@ But : Un application pour la saisie d'un transaction d'une compagnie nommé Thom
 Solution: VentesMeubles.sln 
 Projet: VentesMeubles.csproj
 Classe : VentesMeublesForm.cs
-Date : Le 26-27 fevrier 2026 
+Date : Le 14 Avril 2026 
  
  */
 using System;
@@ -28,8 +28,8 @@ namespace VentesMeubles
 {
  
     /// <summary>
-    /// Les saisies d'une transaction
-    /// </summary>xzczxczxczxc
+    /// Les saisies d'une transaction pour la compagnie Thomas's Old Furnitures
+    /// </summary>
     
     public partial class VentesMeublesForm : Form
     {
@@ -41,6 +41,10 @@ namespace VentesMeubles
         #endregion
 
         #region Constructeurs
+
+        /// <summary>
+        /// Constructeurs par défaut du Form
+        /// </summary>
         public VentesMeublesForm()
         {
             InitializeComponent();
@@ -48,6 +52,11 @@ namespace VentesMeubles
         #endregion
 
         #region Initialisation
+        /// <summary>
+        /// Méthode d'initalisation du form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VentesMeublesForm_Load(object sender, EventArgs e)
         {
             g.InitMessages();
@@ -66,14 +75,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
+                MessageBox.Show(ex.ToString());
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]); 
+                MessageBox.Show(ex.ToString());
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
 
@@ -90,14 +100,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
+                MessageBox.Show(ex.ToString());
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
+                MessageBox.Show(ex.ToString());
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
 
@@ -119,14 +130,15 @@ namespace VentesMeubles
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
+                MessageBox.Show(ex.ToString());
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
+                MessageBox.Show(ex.ToString());
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
         }
@@ -142,6 +154,11 @@ namespace VentesMeubles
 
         #region Quitter
 
+        /// <summary>
+        /// Méthode pour quitter l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void quitter_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -157,9 +174,9 @@ namespace VentesMeubles
         /// <param name="e"></param>
         private void Enregistrer_Click(object sender, EventArgs e)
         {
-               
             try
             {
+                //Méthode 1
                 TransactionClass oTrans;
 
                 oTrans = new TransactionClass();
@@ -176,29 +193,64 @@ namespace VentesMeubles
                     DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
                     Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
 
+                //Méthode 2
+                //TransactionClass oTrans = new TransactionClass();
+                //oTrans.Nom = nomClientGroupBoxMaskedTextBox.Text;
+                //oTrans.Prenom = prenomClientGroupBoxMaskedTextBox.Text;
+                //oTrans.Adresse = adresseClientGroupBoxMaskedTextBox.Text;
+                //oTrans.CodePostal = codePostalClientGroupBoxMaskedTextBox.Text;
+                //oTrans.Telephone = telephoneClientGroupBoxMaskedTextBox.Text;
+                //oTrans.Type = typeMeubleClientGroupBoxComboBox.Text;
+                //oTrans.Style = styleMeubleClientGroupBoxComboBox.Text;
+                //oTrans.Manifacturier= manifacturierTransactionGroupBoxComboBox.Text;
+                //oTrans.Taille = tailleTransactionGroupBoxComboBox.Text;
+                //oTrans.DateLivraison = DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text);
+                //oTrans.Prix = Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency);
+
+                // Méthode 3
+                //TransactionClass oTrans = new TransactionClass(nomClientGroupBoxMaskedTextBox.Text,
+                //     prenomClientGroupBoxMaskedTextBox.Text,
+                //     adresseClientGroupBoxMaskedTextBox.Text,
+                //     codePostalClientGroupBoxMaskedTextBox.Text,
+                //     telephoneClientGroupBoxMaskedTextBox.Text,
+                //     typeMeubleClientGroupBoxComboBox.Text,
+                //     styleMeubleClientGroupBoxComboBox.Text,
+                //     manifacturierTransactionGroupBoxComboBox.Text,
+                //     tailleTransactionGroupBoxComboBox.Text,
+                //     DateTime.Parse(dateLivraisonTransactionGroupBoxDateTimePicker.Text),
+                //     Decimal.Parse(prixMeubleTransactionGroupBoxLabel.Text, System.Globalization.NumberStyles.Currency));
+
+                // oTrans.Enregister();
+
                 datePaiementTotalLabel.Text = oTrans.DatePaiement.ToLongDateString();
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurTableau]); ;
+                MessageBox.Show(ex.ToString());
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
+                MessageBox.Show(ex.ToString());
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(g.tMessages[(int)ce.ErreurIndeterminee]);
             }
-
         }
-
 
 
 
         #endregion
 
         #region Validating DateLivraion
+
+
+        /// <summary>
+        /// La validation du DateTimePicker 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dateLivraisonTransactionGroupBoxDateTimePicker_Validating(object sender, CancelEventArgs e)
         {
             DateTime value;
@@ -216,14 +268,14 @@ namespace VentesMeubles
 
         #region MaskedBoxEnter
 
-        //CHECKER SA VU QUE PAS VU EN CLASSE
+        /// <summary>
+        /// Méthode pour selectionner l'interieur de la MaskedTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MaskedTextBox_Enter(object sender, EventArgs e)
         {
-            if (sender is MaskedTextBox mtb)
-            {
-                this.BeginInvoke((MethodInvoker)(() => mtb.SelectAll()));
-            }
-
+            (sender as MaskedTextBox).SelectAll();
         }
         #endregion
 

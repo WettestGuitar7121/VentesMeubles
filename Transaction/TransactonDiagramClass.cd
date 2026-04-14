@@ -2,8 +2,15 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Transaction.TransactionClass">
     <Position X="3" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Transaction.TransactionClass.CodeErreurs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TransactionClass.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>EABAAABAAAABAAAgAAAAAAAAAAAAAAAAAABAAAEgAEA=</HashCode>
+      <HashCode>EAACAkRAAEEhABAgCABEAAIIACAAAEAMBbBEQACoAJA=</HashCode>
       <FileName>TransactionClass.cs</FileName>
     </TypeIdentifier>
   </Class>
