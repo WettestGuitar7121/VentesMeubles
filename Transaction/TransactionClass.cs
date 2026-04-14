@@ -28,7 +28,7 @@ namespace Transaction
     {
         #region Declaration des champs privées
 
-        private static int idInt;
+        public static int idInt;
         private string nomStr;
 
         private string prenomStr;
